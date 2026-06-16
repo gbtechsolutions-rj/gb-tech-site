@@ -1,0 +1,8 @@
+CORREÇÃO APLICADA
+
+- Voltei o topo para usar vídeo real, como estava antes.
+- Mantive as tags <video> no index.html.
+- Mantive a organização das imagens em assets/media/.
+- Separei as instruções dos vídeos em assets/media/videos/VIDEOS-DO-TOPO-ONLINE.txt.
+- As imagens poster continuam apenas como capa de carregamento.
+- Os vídeos locais gerados anteriormente foram movidos para assets/media/videos/backup-nao-usado/ e não são usados pelo site.

@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>GB Tech Solutions | Desenvolvimento de Sites, Sistemas e Automações</title>
+  <meta name="description" content="Sites profissionais, sistemas web, aplicativos, cardápios digitais e automações inteligentes para empresas que querem vender mais e trabalhar melhor." />
+  <meta name="theme-color" content="#050914" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="GB Tech" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <script>
+    document.documentElement.dataset.theme = localStorage.getItem("gbTechTheme") === "light" ? "light" : "dark";
+  </script>
+
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/img/pwa-icon-192.png" />
+  <link rel="preload" href="assets/img/logo-white.png" as="image">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="io-style-home">
+  <header class="io-header">
+    <div class="container nav io-nav">
+      <a href="#inicio" class="brand io-brand" aria-label="GB Tech Solutions">
+        <img src="assets/img/logo-white.png" alt="GB Tech Solutions" class="brand-img io-brand-img" fetchpriority="high" decoding="async" />
+      </a>
+
+      <div class="nav-actions io-nav-actions">
+        <div class="top-socials" aria-label="Redes sociais">
+          <a href="https://www.instagram.com/gbtechsolutions.br/" target="_blank" rel="noopener" aria-label="Instagram GB Tech Solutions">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.4a4.6 4.6 0 1 1 0 9.2 4.6 4.6 0 0 1 0-9.2Zm0 2a2.6 2.6 0 1 0 0 5.2 2.6 2.6 0 0 0 0-5.2Zm5-1.7a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/gbtechsolutionsrj/" target="_blank" rel="noopener" aria-label="Facebook GB Tech Solutions">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M13.5 22v-8h2.7l.4-3.1h-3.1V8.9c0-.9.3-1.5 1.6-1.5h1.7V4.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.4V14h2.7v8h3.4Z"/>
+            </svg>
+          </a>
+        </div>
+        <div class="language-switcher io-lang" aria-label="Selecionar idioma">
+          <button class="active" type="button" data-lang-switch="pt" aria-label="Traduzir site para português"><span aria-hidden="true">🇧🇷</span> PT</button>
+          <button type="button" data-lang-switch="en" aria-label="Translate website to English"><span aria-hidden="true">🇺🇸</span> EN</button>
+        </div>
+        <div class="theme-switcher io-theme" aria-label="Selecionar tema">
+          <button class="active" type="button" data-theme-switch="dark" aria-label="Usar modo escuro">Escuro</button>
+          <button type="button" data-theme-switch="light" aria-label="Usar modo claro">Claro</button>
+        </div>
+        <button class="install-app-btn install-app-top" type="button" data-install-app>Instalar app</button>
+        <button class="menu-trigger io-menu-trigger" id="mobile" aria-label="Abrir menu" aria-expanded="false">
+          <span>Menu</span><i aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <nav class="menu menu-overlay io-menu-overlay" id="menu" aria-label="Menu principal">
+        <div class="menu-overlay-bg" aria-hidden="true"></div>
+        <div class="menu-panel io-menu-panel" role="dialog" aria-modal="true" aria-label="Menu GB Tech Solutions">
+          <div class="menu-panel-head io-menu-head">
+            <img src="assets/img/logo-white.png" alt="GB Tech Solutions" loading="lazy" decoding="async" />
+            <div class="io-menu-top-actions">
+              <div class="language-switcher io-menu-lang" aria-label="Selecionar idioma">
+                <button class="active" type="button" data-lang-switch="pt" aria-label="Traduzir site para português"><span aria-hidden="true">🇧🇷</span> PT</button>
+                <button type="button" data-lang-switch="en" aria-label="Translate website to English"><span aria-hidden="true">🇺🇸</span> EN</button>
+              </div>
+              <div class="theme-switcher io-menu-theme" aria-label="Selecionar tema">
+                <button class="active" type="button" data-theme-switch="dark" aria-label="Usar modo escuro">Escuro</button>
+                <button type="button" data-theme-switch="light" aria-label="Usar modo claro">Claro</button>
+              </div>
+              <button class="menu-close" type="button" aria-label="Fechar menu">×</button>
+            </div>
+          </div>
+
+          <div class="io-menu-content">
+            <div class="io-menu-main">
+              <div class="io-menu-columns" aria-label="Links principais">
+                <div class="io-menu-column">
+                  <a href="#inicio" class="menu-link">Início</a>
+                  <a href="#servicos" class="menu-link">Nossas soluções</a>
+                  <a href="#produtos-prontos" class="menu-link">Produtos prontos</a>
+                  <a href="#publico" class="menu-link">Para quem atendemos</a>
+                  <a href="#antes-depois" class="menu-link">Antes e depois</a>
+                  <a href="#planos" class="menu-link">Planos</a>
+                </div>
+
+                <div class="io-menu-column">
+                  <a href="#sobre" class="menu-link">Quem somos</a>
+                  <a href="#portfolio" class="menu-link">Projetos</a>
+                  <a href="#depoimentos" class="menu-link">Depoimentos</a>
+                  <a href="#faq" class="menu-link">FAQ</a>
+                  <a href="#localizacao" class="menu-link">Localização</a>
+                  <a href="#contato" class="menu-link">Fale conosco</a>
+                </div>
+              </div>
+
+              <div class="io-menu-socials" aria-label="Redes sociais">
+                <a href="https://www.instagram.com/gbtechsolutions.br/" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://www.facebook.com/gbtechsolutionsrj/" target="_blank" rel="noopener" aria-label="Facebook GB Tech Solutions">Facebook</a>
+                <a href="#" aria-label="Youtube GB Tech Solutions">Youtube</a>
+                <a href="#" aria-label="Tiktok GB Tech Solutions">Tiktok</a>
+              </div>
+
+            </div>
+
+            <div class="io-menu-photo-slider" aria-label="Slides de fotos realistas">
+              <figure class="io-menu-photo active">
+                <img src="assets/img/fluxo-01-estrategia.jpg" alt="Cliente e consultor planejando um projeto digital" loading="lazy" decoding="async" />
+                <figcaption>Diagnóstico e proposta</figcaption>
+              </figure>
+              <figure class="io-menu-photo">
+                <img src="assets/img/produto-cardapio-delivery.jpg" alt="Cliente usando cardápio digital em restaurante" loading="lazy" decoding="async" />
+                <figcaption>Cardápio digital para delivery</figcaption>
+              </figure>
+              <figure class="io-menu-photo">
+                <img src="assets/img/produto-agenda-online.jpg" alt="Cliente usando agenda online em um salão" loading="lazy" decoding="async" />
+                <figcaption>Agenda online para serviços</figcaption>
+              </figure>
+              <figure class="io-menu-photo">
+                <img src="assets/img/servico-automacao-atendimento.jpg" alt="Atendente usando automação de atendimento" loading="lazy" decoding="async" />
+                <figcaption>Automação, IA e performance</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="io-menu-footer">
+            <span>© <span id="menuYear"></span> · GB Tech Solutions</span>
+            <a href="https://wa.me/5521964589848?text=Olá!%20Vim%20pelo%20site%20da%20GB%20Tech%20Solutions." target="_blank" rel="noopener">Solicitar orçamento</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero ioasys-exact-hero" id="inicio">
+      <div class="io-left-panel" aria-hidden="true"></div>
+
+      <div class="io-right-panel" aria-label="Vídeo tecnológico com cortes no topo">
+        <!-- Midia do topo: o video entra quando estiver pronto; a imagem local fica apenas como plano B. -->
+        <div class="io-video-cut io-cut-one">
+          <img class="io-video-fallback" src="assets/img/fluxo-02-design-interface.jpg" alt="" aria-hidden="true" fetchpriority="high" decoding="async">
+          <video muted loop playsinline preload="metadata" poster="assets/img/fluxo-02-design-interface.jpg">
+            <source data-src="https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="io-video-cut io-cut-two">
+          <img class="io-video-fallback" src="assets/img/fluxo-03-sistemas-automacoes.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+          <video muted loop playsinline preload="metadata" poster="assets/img/fluxo-03-sistemas-automacoes.jpg">
+            <source data-src="https://videos.pexels.com/video-files/5028622/5028622-uhd_2560_1440_25fps.mp4" type="video/mp4" media="(min-width: 721px)" />
+          </video>
+        </div>
+        <div class="io-video-cut io-cut-three">
+          <img class="io-video-fallback" src="assets/img/servico-automacao-atendimento.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+          <video muted loop playsinline preload="metadata" poster="assets/img/servico-automacao-atendimento.jpg">
+            <source data-src="https://videos.pexels.com/video-files/28709421/28709421-uhd_2560_1440_30fps.mp4" type="video/mp4" media="(min-width: 721px)" />
+          </video>
+        </div>
+        <div class="io-video-color"></div>
+        <div class="io-scanline"></div>
+
+        <div class="io-side-effect io-side-effect-a">
+          <small>produto digital</small>
+          <strong id="ioSideOne">site premium</strong>
+        </div>
+        <div class="io-side-effect io-side-effect-b">
+          <small>dados e IA</small>
+          <strong id="ioSideTwo">automação</strong>
+        </div>
+      </div>
+
+      <div class="container io-hero-layer">
+        <div class="io-copy">
+          <p class="io-hero-desc">
+            Criamos sites, sistemas e automações para empresas que querem vender mais, organizar processos e atender melhor pelo WhatsApp.
+          </p>
+          <div class="io-hero-actions">
+            <a class="io-hero-btn" href="https://wa.me/5521964589848?text=Olá!%20Quero%20um%20projeto%20digital%20premium%20com%20a%20GB%20Tech%20Solutions." target="_blank">Solicitar projeto</a>
+            <a class="io-hero-link" href="#servicos">Ver soluções</a>
+          </div>
+        </div>
+
+        <h1 class="io-hero-title" aria-label="GB Tech cria sites, sistemas, IA e automações">
+          <span class="io-title-white">Gb.tech</span>
+          <span class="io-title-yellow" id="ioHeroWord">solutions</span>
+        </h1>
+      </div>
+
+      <a class="io-scroll" href="#servicos"><span>Role para explorar</span><i></i></a>
+    </section>
+
+    <section class="install-app-section" aria-label="Instalar aplicativo GB Tech Solutions">
+      <div class="container install-app-card reveal">
+        <div>
+          <span class="kicker">App GB Tech</span>
+          <h2>Instale a GB Tech no seu celular</h2>
+          <p>Acesse o site como aplicativo, direto pela tela inicial, com a mesma experiência e atualizações do site oficial.</p>
+        </div>
+        <button class="btn install-app-main" type="button" data-install-app>Instalar app</button>
+      </div>
+    </section>
+
+
+
+    <section class="gb-scroll-experience" id="experiencia-scroll" aria-label="Experiência de rolagem premium GB Tech">
+      <div class="gb-scroll-sticky">
+        <div class="container gb-scroll-layout">
+          <div class="gb-scroll-copy reveal">
+            <span class="kicker">Scroll premium GB Tech</span>
+            <h2>Quando o cliente rola, o site continua vendendo.</h2>
+            <p>Depois da abertura, cada etapa muda o visual conforme a decisão do cliente: entender, desenhar, desenvolver e transformar o projeto em contato real.</p>
+
+            <div class="gb-scroll-tabs" aria-label="Etapas da experiência">
+              <button class="active" data-gb-scroll-tab="0" type="button">01 Diagnóstico</button>
+              <button data-gb-scroll-tab="1" type="button">02 Interface</button>
+              <button data-gb-scroll-tab="2" type="button">03 Sistema</button>
+              <button data-gb-scroll-tab="3" type="button">04 Conversão</button>
+            </div>
+
+            <div class="gb-scroll-progress" aria-hidden="true"><span id="gbScrollBar"></span></div>
+          </div>
+
+          <div class="gb-scroll-visual reveal">
+            <figure class="gb-scroll-photo active">
+              <img src="assets/img/fluxo-01-estrategia.jpg" alt="Cliente e consultor planejando um projeto digital premium" loading="lazy" decoding="async" />
+              <figcaption><strong>Diagnóstico</strong><span>Entendemos o negócio, o público e o objetivo antes de construir.</span></figcaption>
+            </figure>
+            <figure class="gb-scroll-photo">
+              <img src="assets/img/fluxo-02-design-interface.jpg" alt="Designer criando uma interface premium" loading="lazy" decoding="async" />
+              <figcaption><strong>Interface</strong><span>Visual moderno, claro e com cara de empresa grande.</span></figcaption>
+            </figure>
+            <figure class="gb-scroll-photo">
+              <img src="assets/img/fluxo-03-sistemas-automacoes.jpg" alt="Equipe analisando sistema e dashboards" loading="lazy" decoding="async" />
+              <figcaption><strong>Construção</strong><span>Sites, sistemas, automações, dashboards e integrações.</span></figcaption>
+            </figure>
+            <figure class="gb-scroll-photo">
+              <img src="assets/img/produto-site-institucional.jpg" alt="Empresário usando site profissional para gerar contatos" loading="lazy" decoding="async" />
+              <figcaption><strong>Conversão</strong><span>Projeto pronto para captar clientes e gerar resultado.</span></figcaption>
+            </figure>
+
+            <div class="gb-scroll-orbit gb-scroll-orbit-one">Sites premium</div>
+            <div class="gb-scroll-orbit gb-scroll-orbit-two">Sistemas web</div>
+            <div class="gb-scroll-orbit gb-scroll-orbit-three">Automação + IA</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="io-studios">
+      <div class="container studios-wrap">
+        <div class="studios-title reveal">
+          <span class="kicker">Studios GB Tech</span>
+          <h2>Soluções digitais para empresas que precisam vender e operar melhor.</h2>
+          <p>Planejamos, desenvolvemos e integramos tecnologia com foco no que realmente importa: atrair clientes, organizar processos e economizar tempo.</p>
+        </div>
+        <div class="studios-grid">
+          <article class="studio-card reveal">
+            <span class="studio-number">01</span>
+            <div class="studio-icon" aria-hidden="true">WEB</div>
+            <h3>Sites e produtos digitais</h3>
+            <p>Sites institucionais, landing pages, cardápios digitais, agendas online e interfaces responsivas para o cliente encontrar sua empresa e chamar no WhatsApp.</p>
+            <strong>Ideal para presença online, vendas e divulgação.</strong>
+          </article>
+          <article class="studio-card reveal">
+            <span class="studio-number">02</span>
+            <div class="studio-icon" aria-hidden="true">CRM</div>
+            <h3>Estratégia e captação</h3>
+            <p>Organizamos a jornada do cliente, textos comerciais, chamadas para ação e páginas pensadas para transformar visitas em contatos qualificados.</p>
+            <strong>Foco em confiança, clareza e conversão.</strong>
+          </article>
+          <article class="studio-card reveal">
+            <span class="studio-number">03</span>
+            <div class="studio-icon" aria-hidden="true">IA</div>
+            <h3>Automações, dados e IA</h3>
+            <p>Criamos automações de atendimento, integrações, dashboards e sistemas internos para reduzir tarefas repetitivas e melhorar a gestão.</p>
+            <strong>Mais controle para sua operação crescer.</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="wide-promo" aria-label="Anúncio de automações por assinatura">
+      <div class="container">
+        <div class="wide-promo-card reveal">
+          <div class="wide-promo-copy">
+            <span class="kicker">Plano mensal</span>
+            <h2>Automação para Instagram + WhatsApp</h2>
+            <p>Capte interessados pelo Instagram, direcione a conversa para o WhatsApp e organize o atendimento com fluxos comerciais sob medida.</p>
+          </div>
+          <div class="wide-promo-actions">
+            <a class="btn" href="#produtos-prontos">Ver produtos prontos</a>
+            <a class="btn btn-white" href="https://wa.me/5521964589848?text=Olá!%20Tenho%20interesse%20no%20combo%20mensal%20Instagram%20%2B%20WhatsApp%20da%20GB%20Tech%20Solutions." target="_blank" rel="noopener">Consultar mensalidade</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos">
+      <div class="container">
+        <div class="trust-strip reveal" aria-label="Por que escolher a GB Tech Solutions">
+          <div>
+            <span>01</span>
+            <strong>Atendimento direto</strong>
+            <p>Conversa clara pelo WhatsApp, sem enrola&ccedil;&atilde;o e com orienta&ccedil;&atilde;o sobre o melhor caminho para o projeto.</p>
+          </div>
+          <div>
+            <span>02</span>
+            <strong>Projeto sob medida</strong>
+            <p>Site, sistema, agenda, card&aacute;pio ou automa&ccedil;&atilde;o pensados para a rotina real da sua empresa.</p>
+          </div>
+          <div>
+            <span>03</span>
+            <strong>Entrega pronta para uso</strong>
+            <p>Layout responsivo, bot&otilde;es de contato, Google Maps e estrutura preparada para gerar oportunidades.</p>
+          </div>
+        </div>
+
+        <div class="section-title reveal">
+          <div class="kicker">Soluções digitais</div>
+          <h2>Serviços para empresas que precisam crescer no digital</h2>
+          <p>
+            Estruturamos soluções práticas para negócios locais, delivery, prestadores de serviço,
+            salões, clínicas, lojas e empresas que precisam de presença online e sistemas eficientes.
+          </p>
+        </div>
+
+        <div class="solutions-carousel-wrap">
+          <div class="services-grid ioasys-services-carousel" data-solutions-carousel>
+          <article class="service reveal is-active" tabindex="0">
+            <img src="assets/img/produto-site-institucional.jpg" alt="Empresário usando site profissional para gerar contatos" loading="lazy" decoding="async">
+            <div class="service-content">
+              <div class="service-icon" aria-hidden="true">WEB</div>
+              <h3>Sites profissionais</h3>
+              <p>Sites modernos com WhatsApp, apresentação da empresa, serviços, localização e estrutura para gerar contatos.</p>
+            </div>
+          </article>
+
+          <article class="service reveal" tabindex="0">
+            <img src="assets/img/fluxo-03-sistemas-automacoes.jpg" alt="Sistema web com dashboards e controle de dados" loading="lazy" decoding="async">
+            <div class="service-content">
+              <div class="service-icon" aria-hidden="true">SYS</div>
+              <h3>Sistemas web</h3>
+              <p>Sistemas sob medida para gestão, agendamento, pedidos, relatórios, clientes e controle interno.</p>
+            </div>
+          </article>
+
+          <article class="service reveal" tabindex="0">
+            <img src="assets/img/servico-automacao-atendimento.jpg" alt="Atendimento com automação e painel inteligente" loading="lazy" decoding="async">
+            <div class="service-content">
+              <div class="service-icon" aria-hidden="true">IA</div>
+              <h3>Automações e IA</h3>
+              <p>Automatização de atendimento, processos, captação, mensagens, tarefas repetitivas e integrações inteligentes.</p>
+            </div>
+          </article>
+
+          <article class="service reveal" tabindex="0">
+            <img src="assets/img/produto-cardapio-delivery.jpg" alt="Cliente usando cardápio digital em restaurante" loading="lazy" decoding="async">
+            <div class="service-content">
+              <div class="service-icon" aria-hidden="true">QR</div>
+              <h3>Cardápio digital</h3>
+              <p>Cardápio com QR Code, categorias, produtos, carrinho e envio automático do pedido para o WhatsApp.</p>
+            </div>
+          </article>
+
+          <article class="service reveal" tabindex="0">
+            <img src="assets/img/servico-apps-pwa.jpg" alt="Cliente usando aplicativo mobile em uma loja" loading="lazy" decoding="async">
+            <div class="service-content">
+              <div class="service-icon" aria-hidden="true">PWA</div>
+              <h3>Aplicativos e PWA</h3>
+              <p>Experiências mobile para clientes e equipes, com aparência moderna e funcionamento simples no celular.</p>
+            </div>
+          </article>
+
+          <article class="service reveal" tabindex="0">
+            <img src="assets/img/servico-sistema-desktop.jpg" alt="Funcionário usando sistema desktop de gestão interna" loading="lazy" decoding="async">
+            <div class="service-content">
+              <div class="service-icon" aria-hidden="true">APP</div>
+              <h3>Sistemas desktop</h3>
+              <p>Programas personalizados para rotinas internas, controle local, operação e automação empresarial.</p>
+            </div>
+          </article>
+          </div>
+
+          <div class="solutions-carousel-nav" aria-label="Navegar pelas soluções">
+            <button type="button" data-solutions-prev aria-label="Solução anterior">←</button>
+            <button type="button" data-solutions-next aria-label="Próxima solução">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="audience-section" id="publico">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="kicker">Para quem atendemos</div>
+          <h2>Solu&ccedil;&otilde;es pensadas para neg&oacute;cios reais</h2>
+          <p>Atendemos empresas e profissionais que precisam vender melhor, organizar atendimento e transmitir confian&ccedil;a no digital.</p>
+        </div>
+
+        <div class="audience-grid">
+          <article class="audience-card reveal"><span>01</span><h3>Restaurantes e delivery</h3><p>Card&aacute;pio digital, pedidos pelo WhatsApp, QR Code e apresenta&ccedil;&atilde;o profissional dos produtos.</p></article>
+          <article class="audience-card reveal"><span>02</span><h3>Sal&otilde;es, cl&iacute;nicas e servi&ccedil;os</h3><p>Agenda online, bot&otilde;es de contato, p&aacute;gina com servi&ccedil;os e capta&ccedil;&atilde;o de clientes.</p></article>
+          <article class="audience-card reveal"><span>03</span><h3>Empresas locais</h3><p>Site institucional, Google Maps, WhatsApp integrado e visual que passa mais confian&ccedil;a.</p></article>
+          <article class="audience-card reveal"><span>04</span><h3>Opera&ccedil;&otilde;es internas</h3><p>Sistemas sob medida, dashboards, automa&ccedil;&otilde;es e controle de processos repetitivos.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="transformation-section" id="antes-depois">
+      <div class="container transformation-grid">
+        <div class="transformation-copy reveal">
+          <span class="kicker">Antes e depois</span>
+          <h2>O que muda quando sua empresa tem uma presen&ccedil;a digital bem feita</h2>
+          <p>O objetivo n&atilde;o &eacute; apenas deixar bonito. &Eacute; organizar a informa&ccedil;&atilde;o, facilitar o contato e ajudar o cliente a confiar mais r&aacute;pido na sua empresa.</p>
+        </div>
+
+        <div class="before-after-panel reveal">
+          <div class="before-card">
+            <span>Antes</span>
+            <ul>
+              <li>Cliente pergunta tudo pelo WhatsApp.</li>
+              <li>Servi&ccedil;os e pre&ccedil;os ficam espalhados.</li>
+              <li>A empresa parece menor do que realmente &eacute;.</li>
+              <li>Falta um lugar claro para apresentar o neg&oacute;cio.</li>
+            </ul>
+          </div>
+          <div class="after-card">
+            <span>Depois</span>
+            <ul>
+              <li>Site profissional com informa&ccedil;&otilde;es organizadas.</li>
+              <li>WhatsApp, Google Maps e formul&aacute;rio no caminho certo.</li>
+              <li>Visual mais confi&aacute;vel para vender e divulgar.</li>
+              <li>Estrutura pronta para captar contatos qualificados.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof-section" id="depoimentos">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="kicker">Confian&ccedil;a na entrega</div>
+          <h2>O que o cliente percebe quando o projeto fica pronto</h2>
+          <p>Sem prometer milagre: um bom projeto digital precisa deixar a empresa mais clara, acess&iacute;vel e profissional.</p>
+        </div>
+
+        <div class="proof-grid">
+          <article class="proof-card reveal">
+            <p>&ldquo;Agora fica mais f&aacute;cil apresentar a empresa e mandar um link profissional para os clientes.&rdquo;</p>
+            <span>Presen&ccedil;a digital</span>
+          </article>
+          <article class="proof-card reveal">
+            <p>&ldquo;O atendimento fica mais organizado porque as informa&ccedil;&otilde;es principais j&aacute; est&atilde;o no site.&rdquo;</p>
+            <span>Atendimento</span>
+          </article>
+          <article class="proof-card reveal">
+            <p>&ldquo;O visual transmite mais confian&ccedil;a e ajuda o cliente a entender o servi&ccedil;o antes de chamar.&rdquo;</p>
+            <span>Confian&ccedil;a</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about ioasys-about" id="sobre">
+      <div class="container ioasys-about-inner">
+        <div class="ioasys-about-head reveal">
+          <span>Quem somos</span>
+          <a href="https://wa.me/5521964589848?text=Ol%C3%A1!%20Quero%20conversar%20com%20a%20GB%20Tech%20Solutions." target="_blank" rel="noopener">Entre em contato</a>
+          <h2>
+            Impulsionamos negócios,
+            <strong>empresas e futuros</strong>
+            <i aria-hidden="true"></i>
+          </h2>
+          <div class="ioasys-spark" aria-hidden="true">✦</div>
+        </div>
+
+        <div class="ioasys-about-line" aria-hidden="true"></div>
+
+        <div class="ioasys-about-showcase reveal">
+          <div class="ioasys-round-text" aria-hidden="true">
+            <span>GB TECH • CO-CRIE • SOLUÇÕES •</span>
+          </div>
+
+          <figure class="ioasys-about-card">
+            <img src="assets/img/sobre-tech-workspace.png" alt="Esta&ccedil;&atilde;o de trabalho moderna com dashboards, sistemas e automa&ccedil;&otilde;es digitais" loading="lazy" decoding="async">
+            <figcaption>
+              <span>Da ideia ao produto online</span>
+              <strong>Planejamento, design, sistemas e automações para negócios reais.</strong>
+            </figcaption>
+          </figure>
+
+          <div class="ioasys-about-note">
+            <strong>Projetos sob medida</strong>
+            <span>Sites, cardápios digitais, agendas, sistemas e IA com foco em resultado.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about about-legacy" id="sobre-legacy" hidden>
+      <div class="container about-grid">
+        <div class="photo-stack reveal">
+          <div class="photo-main">
+            <img src="assets/img/fluxo-01-estrategia.jpg" alt="Equipe planejando projeto digital com cliente" loading="lazy" decoding="async">
+          </div>
+          <div class="photo-small">
+            <img src="assets/img/servico-automacao-atendimento.jpg" alt="Atendimento e suporte com tecnologia" loading="lazy" decoding="async">
+          </div>
+          <div class="floating-info">
+            <strong>Atendimento próximo</strong>
+            <span>Planejamento, desenvolvimento e suporte para o projeto sair do papel.</span>
+          </div>
+        </div>
+
+        <div class="about-content reveal">
+          <div class="kicker">Sobre a GB</div>
+          <h2>Uma empresa criada para resolver problemas reais com tecnologia.</h2>
+          <p>
+            A GB Tech Solutions desenvolve soluções digitais para empresas que precisam
+            profissionalizar sua presença online, automatizar tarefas e melhorar a experiência dos clientes.
+          </p>
+          <p>
+            Nosso foco é entregar projetos práticos, bonitos e funcionais — desde um site institucional
+            até um sistema personalizado para operação do negócio.
+          </p>
+
+          <div class="check-grid">
+            <div class="check-item"><span>✓</span>Design profissional</div>
+            <div class="check-item"><span>✓</span>Desenvolvimento sob medida</div>
+            <div class="check-item"><span>✓</span>Foco em conversão</div>
+            <div class="check-item"><span>✓</span>Suporte e orientação</div>
+          </div>
+
+          <a class="btn btn-primary" href="https://wa.me/5521964589848?text=Olá!%20Quero%20conhecer%20as%20soluções%20da%20GB%20Tech%20Solutions." target="_blank">Conversar com a GB</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="processo">
+      <div class="container process-wrap">
+        <div class="process-photo reveal">
+          <img src="assets/img/fluxo-02-design-interface.jpg" alt="Interface de projeto digital em desenvolvimento" loading="lazy" decoding="async">
+        </div>
+
+        <div class="reveal">
+          <div class="kicker">Método de trabalho</div>
+          <div class="section-title left">
+            <h2>Do primeiro contato até o projeto online.</h2>
+            <p>Seguimos um processo direto para entender, planejar, desenvolver e entregar com clareza.</p>
+          </div>
+
+          <div class="steps">
+            <div class="step"><div class="num">1</div><div><h3>Diagnóstico</h3><p>Entendemos seu negócio, serviço, público e objetivo principal.</p></div></div>
+            <div class="step"><div class="num">2</div><div><h3>Estratégia</h3><p>Definimos a estrutura ideal: site, sistema, cardápio digital, app ou automação.</p></div></div>
+            <div class="step"><div class="num">3</div><div><h3>Desenvolvimento</h3><p>Criamos o visual, funcionalidades, integração com WhatsApp e recursos necessários.</p></div></div>
+            <div class="step"><div class="num">4</div><div><h3>Entrega e suporte</h3><p>Publicamos o projeto, ajustamos os detalhes finais e orientamos o uso.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="showcase" id="portfolio">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="kicker">Amostras para clientes</div>
+          <h2>Modelos de solução para apresentar e vender</h2>
+          <p>
+            Clique em qualquer card para abrir uma demonstração visual do produto funcionando.
+          </p>
+        </div>
+
+        <div class="showcase-grid">
+          <article class="case reveal clickable-case" data-demo-open="cardapio" tabindex="0">
+            <div class="case-img">
+              <img src="assets/img/produto-cardapio-delivery.jpg" alt="Cardápio digital para restaurante e delivery" loading="lazy" decoding="async">
+              <span class="open-badge">Abrir amostra</span>
+            </div>
+            <div class="case-body">
+              <span class="case-tag">Delivery</span>
+              <h3>Site + Cardápio Digital</h3>
+              <p>Ideal para restaurantes, pizzarias, hamburguerias e delivery com pedidos pelo WhatsApp.</p>
+              <button class="case-btn" type="button">Ver funcionando</button>
+            </div>
+          </article>
+
+          <article class="case reveal clickable-case" data-demo-open="agenda" tabindex="0">
+            <div class="case-img">
+              <img src="assets/img/produto-agenda-online.jpg" alt="Agenda online para salão e serviços" loading="lazy" decoding="async">
+              <span class="open-badge">Abrir amostra</span>
+            </div>
+            <div class="case-body">
+              <span class="case-tag">Serviços</span>
+              <h3>Sistema de Agendamento</h3>
+              <p>Para salões, clínicas e profissionais que precisam organizar horários e clientes.</p>
+              <button class="case-btn" type="button">Ver funcionando</button>
+            </div>
+          </article>
+
+          <article class="case reveal clickable-case" data-demo-open="site" tabindex="0">
+            <div class="case-img">
+              <img src="assets/img/produto-site-institucional.jpg" alt="Site institucional premium para empresa local" loading="lazy" decoding="async">
+              <span class="open-badge">Abrir amostra</span>
+            </div>
+            <div class="case-body">
+              <span class="case-tag">Empresas</span>
+              <h3>Site Institucional Premium</h3>
+              <p>Para empresas locais que precisam transmitir confiança e captar contatos qualificados.</p>
+              <button class="case-btn" type="button">Ver funcionando</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="product-demo" id="produtos">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="kicker">Demonstração dos produtos</div>
+          <h2>Prévia realista das soluções funcionando</h2>
+          <p>Mostre para o cliente uma experiência visual parecida com o produto final antes mesmo de fechar o projeto.</p>
+        </div>
+
+        <div class="demo-tabs reveal">
+          <button class="demo-tab active" data-demo="cardapio">Cardápio Digital</button>
+          <button class="demo-tab" data-demo="agenda">Agenda Online</button>
+          <button class="demo-tab" data-demo="site">Site Empresarial</button>
+        </div>
+
+        <div class="demo-stage reveal">
+          <div class="demo-panel active" id="demo-cardapio">
+            <div class="demo-copy">
+              <span class="mini-label">Demo para delivery</span>
+              <h3>Cardápio digital com visual de restaurante real</h3>
+              <p>
+                O cliente acessa pelo QR Code, vê a identidade do estabelecimento,
+                escolhe produtos com foto, acompanha o total do carrinho e envia o pedido pelo WhatsApp.
+              </p>
+              <div class="demo-benefits">
+                <span>Logo do restaurante</span>
+                <span>Produtos com foto</span>
+                <span>Carrinho automático</span>
+              </div>
+            </div>
+
+            <div class="real-menu-demo">
+              <div class="restaurant-cover">
+                <div class="fake-restaurant-logo">BH</div>
+                <div>
+                  <h4>Burger House</h4>
+                  <p>Hambúrguer artesanal • Delivery</p>
+                </div>
+                <span class="open-status">Aberto</span>
+              </div>
+
+              <div class="category-pills">
+                <button class="active">Burgers</button>
+                <button>Combos</button>
+                <button>Bebidas</button>
+              </div>
+
+              <div class="food-item">
+                <img src="assets/img/hamburguer-artesanal.jpg" alt="Hambúrguer artesanal" loading="lazy" decoding="async">
+                <div>
+                  <strong>X-Burger Artesanal</strong>
+                  <small>Pão brioche, carne 160g, queijo e molho especial</small>
+                  <b>R$ 24,90</b>
+                </div>
+                <button class="add-item" data-price="24.90">+</button>
+              </div>
+
+              <div class="food-item">
+                <img src="assets/img/batata-frita-premium.jpg" alt="Batata frita" loading="lazy" decoding="async">
+                <div>
+                  <strong>Batata Frita Premium</strong>
+                  <small>Porção crocante com cheddar e bacon</small>
+                  <b>R$ 18,90</b>
+                </div>
+                <button class="add-item" data-price="18.90">+</button>
+              </div>
+
+              <div class="food-item">
+                <img src="assets/img/refrigerante-lata.jpg" alt="Refrigerante gelado" loading="lazy" decoding="async">
+                <div>
+                  <strong>Refrigerante Lata</strong>
+                  <small>350ml gelado</small>
+                  <b>R$ 6,00</b>
+                </div>
+                <button class="add-item" data-price="6.00">+</button>
+              </div>
+
+              <div class="cart-box">
+                <span>Total do pedido</span>
+                <strong id="cartTotal">R$ 0,00</strong>
+              </div>
+
+              <button class="phone-action">Enviar pedido no WhatsApp</button>
+            </div>
+          </div>
+
+          <div class="demo-panel" id="demo-agenda">
+            <div class="demo-copy">
+              <span class="mini-label">Demo para salão e clínicas</span>
+              <h3>Agendamento online com cara de sistema profissional</h3>
+              <p>O cliente escolhe serviço, profissional e horário disponível. A empresa reduz atendimento manual e organiza a agenda.</p>
+              <div class="demo-benefits">
+                <span>Horários</span>
+                <span>Serviços</span>
+                <span>Clientes</span>
+              </div>
+            </div>
+
+            <div class="schedule-demo">
+              <div class="schedule-header">
+                <div class="fake-restaurant-logo beauty">SB</div>
+                <div>
+                  <h4>Studio Bella</h4>
+                  <p>Agenda de hoje</p>
+                </div>
+              </div>
+
+              <div class="calendar-row">
+                <button class="time-btn active">09:00</button>
+                <button class="time-btn">10:30</button>
+                <button class="time-btn">13:00</button>
+                <button class="time-btn">15:30</button>
+              </div>
+
+              <div class="booking-card">
+                <strong>Corte + Escova</strong>
+                <span>Profissional: Ana Clara</span>
+                <span id="selectedTime">Horário selecionado: 09:00</span>
+              </div>
+
+              <div class="mini-dashboard">
+                <div><strong>12</strong><span>Agendamentos</span></div>
+                <div><strong>4</strong><span>Profissionais</span></div>
+                <div><strong>R$ 860</strong><span>Previsto</span></div>
+              </div>
+
+              <button class="phone-action">Confirmar agendamento</button>
+            </div>
+          </div>
+
+          <div class="demo-panel" id="demo-site">
+            <div class="demo-copy">
+              <span class="mini-label">Demo para empresas locais</span>
+              <h3>Site empresarial com layout premium e foco em contato</h3>
+              <p>Uma estrutura clara com apresentação da empresa, serviços, diferenciais, localização e botões estratégicos para WhatsApp.</p>
+              <div class="demo-benefits">
+                <span>SEO básico</span>
+                <span>Google Maps</span>
+                <span>Contato rápido</span>
+              </div>
+            </div>
+
+            <div class="website-preview premium-preview">
+              <div class="browser-bar"><i></i><i></i><i></i></div>
+              <div class="site-hero-mini">
+                <h4>Clínica Prime</h4>
+                <p>Atendimento especializado com agendamento rápido e equipe profissional.</p>
+                <button>Solicitar atendimento</button>
+              </div>
+              <div class="site-mini-grid">
+                <div>Serviços</div>
+                <div>Diferenciais</div>
+                <div>Localização</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="demo-cta reveal">
+          <div>
+            <h3>Mostre a demo antes de falar preço.</h3>
+            <p>Quando o cliente visualiza o produto funcionando, fica mais fácil entender o valor e fechar o projeto.</p>
+          </div>
+          <a class="btn btn-primary" href="https://wa.me/5521964589848?text=Olá!%20Quero%20ver%20uma%20demonstração%20de%20site%2C%20cardápio%20digital%20ou%20sistema." target="_blank">Quero uma demonstração</a>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="subscription-products" id="produtos-prontos">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="kicker">Produtos prontos</div>
+          <h2>Automações por assinatura para vender e atender melhor</h2>
+          <p>Soluções prontas para empresas que querem responder mais rápido, captar clientes e organizar o atendimento sem depender de processos manuais.</p>
+        </div>
+
+        <div class="subscription-grid">
+          <article class="subscription-card reveal">
+            <span class="subscription-tag">Instagram</span>
+            <h3>Automação para Instagram</h3>
+            <p>Prospecção inteligente por nicho e hashtags para atrair pessoas certas, gerar curiosidade e iniciar conversas comerciais.</p>
+            <button class="system-preview" type="button" data-system-preview="instagram" aria-label="Abrir imagem do sistema de automação para Instagram">
+              <img data-system-image src="assets/img/ist/ist_001.jpg" alt="Painel do sistema Instagram Automation Pro" loading="lazy" decoding="async">
+              <span>Ver painel do sistema</span>
+            </button>
+            <ul>
+              <li>Busca de perfis por nicho e hashtags</li>
+              <li>Interações estratégicas para gerar visitas ao perfil</li>
+              <li>Mensagens configuradas para iniciar conversas</li>
+              <li>Atendimento humano para conduzir e fechar o cliente</li>
+            </ul>
+            <div class="subscription-price">Plano mensal</div>
+            <a class="btn btn-white" href="https://wa.me/5521964589848?text=Olá!%20Tenho%20interesse%20na%20automação%20para%20Instagram%20da%20GB%20Tech%20Solutions." target="_blank" rel="noopener">Consultar Instagram</a>
+          </article>
+
+          <article class="subscription-card featured reveal">
+            <span class="subscription-tag">WhatsApp</span>
+            <h3>Automação para WhatsApp</h3>
+            <p>Atendimento automatizado para responder dúvidas, qualificar clientes, receber pedidos e reduzir mensagens repetitivas.</p>
+            <button class="system-preview" type="button" data-system-preview="whatsapp" aria-label="Abrir imagem do sistema de automação para WhatsApp">
+              <img data-system-image src="assets/img/WhatsApp/whtat_001.jpg" alt="Painel do sistema de automação para WhatsApp" loading="lazy" decoding="async">
+              <span>Ver painel do sistema</span>
+            </button>
+            <ul>
+              <li>Menu automático de atendimento</li>
+              <li>Respostas rápidas para perguntas comuns</li>
+              <li>Fluxo para orçamento, agenda ou pedido</li>
+              <li>Encaminhamento para atendimento humano</li>
+            </ul>
+            <div class="subscription-price">Plano mensal</div>
+            <a class="btn" href="https://wa.me/5521964589848?text=Olá!%20Tenho%20interesse%20na%20automação%20para%20WhatsApp%20da%20GB%20Tech%20Solutions." target="_blank" rel="noopener">Consultar WhatsApp</a>
+          </article>
+
+          <article class="subscription-card reveal">
+            <span class="subscription-tag">Combo</span>
+            <h3>Instagram + WhatsApp</h3>
+            <p>Um funil simples: o Instagram atrai e qualifica, o WhatsApp continua a conversa e ajuda a fechar o atendimento.</p>
+            <button class="system-preview" type="button" data-system-preview="combo" aria-label="Abrir imagem do sistema Instagram e WhatsApp">
+              <img data-system-image src="assets/img/ist_what.png" alt="Painel do sistema integrado Instagram e WhatsApp" loading="lazy" decoding="async">
+              <span>Ver painel do sistema</span>
+            </button>
+            <ul>
+              <li>Integração entre captação e atendimento</li>
+              <li>Fluxos comerciais personalizados</li>
+              <li>Mensagens alinhadas com seu negócio</li>
+              <li>Acompanhamento e ajustes mensais</li>
+            </ul>
+            <div class="subscription-price">Plano mensal</div>
+            <a class="btn btn-white" href="https://wa.me/5521964589848?text=Olá!%20Quero%20saber%20sobre%20o%20combo%20Instagram%20%2B%20WhatsApp%20da%20GB%20Tech%20Solutions." target="_blank" rel="noopener">Ver combo mensal</a>
+          </article>
+        </div>
+
+        <div class="subscription-note reveal">
+          <strong>Atendimento seguro e profissional.</strong>
+          <span>Os fluxos são pensados para atendimento, captação autorizada e relacionamento com clientes, evitando práticas de spam ou abordagens invasivas.</span>
+        </div>
+      </div>
+    </section>
+
+
+    
+
+<section class="home-partners premium-logo-strip">
+  <div class="container">
+    <div class="section-title partners-title">
+      <div class="kicker">Stack de trabalho</div>
+      <h2>Tecnologias e plataformas</h2>
+      <p>Ferramentas e ecossistemas que usamos como referência para criar soluções digitais mais completas, seguras e escaláveis.</p>
+    </div>
+  </div>
+
+  <div class="partners-carousel" data-partners-carousel>
+    <button class="partners-arrow partners-arrow-prev" type="button" data-partners-prev aria-label="Rolar parcerias para a esquerda">
+      <span aria-hidden="true">‹</span>
+    </button>
+
+    <div class="partners-logo-viewport" data-partners-track tabindex="0" aria-label="Logos de parceiros">
+      <div class="partner-logo-item"><img src="assets/img/partners/microsoft-partner.png" alt="Microsoft Partner" loading="lazy" decoding="async"></div>
+      <div class="partner-logo-item"><img src="assets/img/partners/qlik.png" alt="Qlik" loading="lazy" decoding="async"></div>
+      <div class="partner-logo-item"><img src="assets/img/partners/red-hat.png" alt="Red Hat" loading="lazy" decoding="async"></div>
+      <div class="partner-logo-item"><img src="assets/img/partners/snowflake.png" alt="Snowflake" loading="lazy" decoding="async"></div>
+      <div class="partner-logo-item"><img src="assets/img/partners/wem.png" alt="WEM" loading="lazy" decoding="async"></div>
+      <div class="partner-logo-item"><img src="assets/img/partners/azure.png" alt="Azure" loading="lazy" decoding="async"></div>
+      <div class="partner-logo-item"><img src="assets/img/partners/botcity.png" alt="BotCity" loading="lazy" decoding="async"></div>
+      <div class="partner-logo-item"><img src="assets/img/partners/businessmap.png" alt="Businessmap" loading="lazy" decoding="async"></div>
+      <div class="partner-logo-item"><img src="assets/img/partners/dat.png" alt="DAT" loading="lazy" decoding="async"></div>
+      <div class="partner-logo-item"><img src="assets/img/partners/liferay.png" alt="Liferay" loading="lazy" decoding="async"></div>
+    </div>
+
+    <button class="partners-arrow partners-arrow-next" type="button" data-partners-next aria-label="Rolar parcerias para a direita">
+      <span aria-hidden="true">›</span>
+    </button>
+  </div>
+</section>
+
+<section class="pricing" id="planos">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="kicker">Investimento inicial</div>
+          <h2>Planos para começar com presença profissional</h2>
+          <p>Valores de referência para projetos comuns. Sistemas maiores são avaliados conforme necessidade.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <div class="price-card reveal"><h3>Landing Page</h3><p>Para divulgar um serviço, produto, campanha ou captação de clientes.</p><div class="price">R$ 597</div><ul class="features"><li>Página única profissional</li><li>Design responsivo</li><li>Botão para WhatsApp</li><li>Texto comercial básico</li></ul><a class="btn btn-white" href="https://wa.me/5521964589848?text=Olá!%20Tenho%20interesse%20em%20uma%20Landing%20Page." target="_blank">Tenho interesse</a></div>
+          <div class="price-card featured reveal"><span class="plan-badge">Mais escolhido</span><h3>Site Profissional</h3><p>Para empresas que precisam passar confiança, aparecer no Google e vender melhor online.</p><div class="price">R$ 997</div><ul class="features"><li>Até 5 seções</li><li>WhatsApp integrado</li><li>Google Maps</li><li>Formulário de contato</li><li>SEO básico</li></ul><a class="btn" href="https://wa.me/5521964589848?text=Olá!%20Quero%20um%20Site%20Profissional%20com%20a%20GB%20Tech%20Solutions." target="_blank">Quero esse plano</a></div>
+          <div class="price-card reveal"><h3>Sistema Sob Medida</h3><p>Para empresas que precisam automatizar processos ou criar uma plataforma própria.</p><div class="price">A partir de R$ 3.000</div><ul class="features"><li>Painel administrativo</li><li>Login e banco de dados</li><li>Funcionalidades personalizadas</li><li>Integrações</li><li>Suporte técnico</li></ul><a class="btn btn-white" href="https://wa.me/5521964589848?text=Olá!%20Quero%20um%20orçamento%20para%20sistema%20sob%20medida." target="_blank">Fazer orçamento</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+      <div class="container faq-grid">
+        <div class="faq-copy reveal">
+          <span class="kicker">Perguntas frequentes</span>
+          <h2>D&uacute;vidas comuns antes de come&ccedil;ar</h2>
+          <p>Se a sua d&uacute;vida n&atilde;o estiver aqui, chame no WhatsApp e explicamos o melhor caminho para seu projeto.</p>
+        </div>
+
+        <div class="faq-list reveal">
+          <details open>
+            <summary>Quanto tempo leva para criar um site?</summary>
+            <p>Projetos simples normalmente levam de 7 a 15 dias, dependendo do conte&uacute;do, aprova&ccedil;&otilde;es e recursos necess&aacute;rios.</p>
+          </details>
+          <details>
+            <summary>O site funciona bem no celular?</summary>
+            <p>Sim. Os projetos s&atilde;o pensados para funcionar em celular, tablet e desktop, com bot&otilde;es de contato bem vis&iacute;veis.</p>
+          </details>
+          <details>
+            <summary>Voc&ecirc;s integram com WhatsApp e Google Maps?</summary>
+            <p>Sim. Podemos incluir WhatsApp, Google Maps, formul&aacute;rio de contato e links estrat&eacute;gicos para facilitar o atendimento.</p>
+          </details>
+          <details>
+            <summary>Fazem sistemas e automa&ccedil;&otilde;es sob medida?</summary>
+            <p>Sim. Sistemas, dashboards e automa&ccedil;&otilde;es s&atilde;o avaliados conforme a rotina da empresa e o objetivo do projeto.</p>
+          </details>
+          <details>
+            <summary>Preciso ter todo o conte&uacute;do pronto?</summary>
+            <p>N&atilde;o necessariamente. Podemos orientar a estrutura, organizar as informa&ccedil;&otilde;es e ajudar com textos comerciais b&aacute;sicos.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta contact-section" id="contato">
+      <div class="container cta-grid contact-grid">
+        <div class="contact-copy reveal">
+          <span class="cta-badge">Vamos conversar</span>
+          <h2>Conte sua ideia e receba um direcionamento profissional.</h2>
+          <p>Preencha o formulário com o tipo de projeto que você precisa. A mensagem será organizada automaticamente e enviada para o WhatsApp da GB Tech Solutions.</p>
+
+          <a class="contact-whatsapp-direct" href="https://wa.me/5521964589848?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20quero%20conversar%20sobre%20um%20projeto%20digital." target="_blank" rel="noopener">Prefiro chamar direto no WhatsApp</a>
+
+          <div class="contact-highlights" aria-label="Diferenciais do atendimento">
+            <span>Resposta direta no WhatsApp</span>
+            <span>Diagnóstico inicial do projeto</span>
+            <span>Indicação da melhor solução</span>
+          </div>
+        </div>
+
+        <form class="contact-form reveal" id="contactForm">
+          <div class="form-row">
+            <label>
+              <span>Nome</span>
+              <input type="text" name="name" placeholder="Seu nome" autocomplete="name" required>
+            </label>
+            <label>
+              <span>WhatsApp</span>
+              <input type="tel" name="phone" placeholder="(00) 00000-0000" autocomplete="tel" required>
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              <span>Empresa</span>
+              <input type="text" name="company" placeholder="Nome da empresa ou negócio" autocomplete="organization">
+            </label>
+            <label>
+              <span>E-mail</span>
+              <input type="email" name="email" placeholder="seuemail@empresa.com" autocomplete="email">
+            </label>
+          </div>
+
+          <label>
+            <span>Tipo de projeto</span>
+            <select name="project" required>
+              <option value="">Selecione uma opção</option>
+              <option>Site profissional</option>
+              <option>Site + cardápio digital</option>
+              <option>Sistema de agendamento</option>
+              <option>Sistema sob medida</option>
+              <option>Automação e IA</option>
+              <option>Outro projeto digital</option>
+            </select>
+          </label>
+
+          <div class="form-row">
+            <label>
+              <span>Prazo desejado</span>
+              <select name="deadline">
+                <option>Quero começar agora</option>
+                <option>Em até 15 dias</option>
+                <option>Em até 30 dias</option>
+                <option>Ainda estou pesquisando</option>
+              </select>
+            </label>
+            <label>
+              <span>Investimento estimado</span>
+              <select name="budget">
+                <option>Ainda não sei</option>
+                <option>Até R$ 1.000</option>
+                <option>R$ 1.000 a R$ 3.000</option>
+                <option>R$ 3.000 a R$ 8.000</option>
+                <option>Acima de R$ 8.000</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            <span>Mensagem</span>
+            <textarea name="message" rows="5" placeholder="Conte rapidamente o que você precisa, qual seu negócio e o objetivo do projeto." required></textarea>
+          </label>
+
+          <button class="btn btn-primary contact-submit" type="submit">Enviar pelo WhatsApp</button>
+          <p class="contact-note">Ao enviar, uma conversa será aberta no WhatsApp com as informações preenchidas.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="location-section" id="localizacao" aria-label="Onde estamos localizados">
+      <div class="container location-grid">
+        <div class="location-copy reveal">
+          <span class="kicker">Localiza&ccedil;&atilde;o</span>
+          <h2>Onde estamos localizados</h2>
+          <p>Encontre a GB Tech Solutions no Google Maps e veja nossa regi&atilde;o de atendimento.</p>
+          <div class="location-details">
+            <span>GB Tech Solutions</span>
+            <span>Atendimento para projetos digitais, sites, sistemas e automa&ccedil;&otilde;es.</span>
+          </div>
+        </div>
+
+        <div class="location-map reveal" aria-label="Mapa da GB Tech Solutions no Google Maps">
+          <iframe
+            title="Mapa da GB Tech Solutions"
+            src="https://www.google.com/maps?q=GB%20Tech%20Solutions&amp;output=embed"
+            width="900"
+            height="460"
+            style="border:0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-copy">
+        <p>© <span id="year"></span> GB Tech Solutions. Todos os direitos reservados.</p>
+        <a class="footer-facebook-link" href="https://www.facebook.com/gbtechsolutionsrj/" target="_blank" rel="noopener">Abrir Facebook da GB Tech Solutions</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="demo-modal" id="demoModal" aria-hidden="true">
+    <div class="demo-modal-backdrop" data-close-modal></div>
+    <div class="demo-modal-content">
+      <button class="modal-close" type="button" data-close-modal>×</button>
+      <div id="modalDemoContent"></div>
+    </div>
+  </div>
+
+  <div class="system-modal" id="systemModal" aria-hidden="true">
+    <div class="system-modal-backdrop" data-close-system-modal></div>
+    <figure class="system-modal-card">
+      <button class="system-modal-close" type="button" data-close-system-modal aria-label="Fechar imagem do sistema">×</button>
+      <img id="systemModalImage" data-system-image src="assets/img/ist/ist_001.jpg" alt="Painel do sistema Instagram Automation Pro">
+      <figcaption>
+        <strong id="systemModalTitle">Instagram Automation Pro</strong>
+        <span id="systemModalDescription">Painel real do sistema com monitoramento, leads, atividades e controle da automação.</span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="install-modal" id="installModal" aria-hidden="true">
+    <div class="install-modal-backdrop" data-close-install-modal></div>
+    <div class="install-modal-card" role="dialog" aria-modal="true" aria-labelledby="installModalTitle">
+      <h2 id="installModalTitle">Instale o app</h2>
+      <div class="install-app-identity">
+        <img src="assets/img/logo_png.png" alt="GB Tech Solutions">
+        <div>
+          <strong>GB Tech Solutions</strong>
+          <span id="installAppDomain">gbtechsolutions.com.br</span>
+        </div>
+      </div>
+      <div class="install-instructions" id="installInstructions">
+        <p>No Android, toque no menu do navegador e escolha <strong>Instalar app</strong> ou <strong>Adicionar à tela inicial</strong>.</p>
+        <p>No iPhone, abra pelo Safari, toque em compartilhar e escolha <strong>Adicionar à Tela de Início</strong>.</p>
+      </div>
+      <div class="install-modal-actions">
+        <button class="install-confirm" type="button" data-install-direct>Instalar</button>
+        <button class="install-cancel" type="button" data-close-install-modal>Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="whatsapp-quick" id="whatsappQuick">
+    <div class="whatsapp-options" aria-label="Escolha o assunto no WhatsApp">
+      <a href="https://wa.me/5521964589848?text=Ol%C3%A1!%20Quero%20criar%20um%20site%20profissional%20com%20a%20GB%20Tech%20Solutions." target="_blank" rel="noopener">Quero um site</a>
+      <a href="https://wa.me/5521964589848?text=Ol%C3%A1!%20Tenho%20interesse%20em%20card%C3%A1pio%20digital%20ou%20delivery." target="_blank" rel="noopener">Card&aacute;pio digital</a>
+      <a href="https://wa.me/5521964589848?text=Ol%C3%A1!%20Quero%20automatizar%20atendimento%20ou%20processos%20da%20minha%20empresa." target="_blank" rel="noopener">Automa&ccedil;&atilde;o</a>
+      <a href="https://wa.me/5521964589848?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20com%20a%20GB%20Tech%20Solutions." target="_blank" rel="noopener">Or&ccedil;amento</a>
+    </div>
+    <button class="whatsapp" type="button" aria-label="Abrir opções do WhatsApp" aria-expanded="false" aria-controls="whatsappQuick">
+      <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <path d="M19.11 17.39c-.26-.13-1.53-.75-1.77-.84-.24-.09-.41-.13-.58.13-.17.26-.67.84-.82 1.01-.15.17-.3.19-.56.06-.26-.13-1.08-.4-2.05-1.27-.76-.68-1.27-1.51-1.42-1.77-.15-.26-.02-.4.11-.53.12-.12.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44h-.49c-.17 0-.45.06-.69.32-.24.26-.91.89-.91 2.17 0 1.27.93 2.5 1.06 2.67.13.17 1.83 2.79 4.43 3.91.62.27 1.1.43 1.48.55.62.2 1.18.17 1.63.1.5-.07 1.53-.62 1.74-1.22.21-.6.21-1.12.15-1.22-.06-.11-.24-.17-.5-.3z"/>
+        <path d="M16.02 3.2A12.74 12.74 0 0 0 5.04 22.4L3.6 28.8l6.55-1.53A12.75 12.75 0 1 0 16.02 3.2zm0 23.15c-2.07 0-4-.61-5.63-1.67l-.4-.25-3.89.91.83-3.79-.26-.39a10.44 10.44 0 1 1 9.35 5.19z"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="cookie-consent" id="cookieConsent" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+    <div class="cookie-copy">
+      <strong>Cookies e privacidade</strong>
+      <p>
+        Por padrão, utilizamos cookies em nosso site para melhorar seu desempenho, segurança e personalizar conteúdo e anúncios.
+        <a href="#contato">Nossa política de privacidade</a>
+      </p>
+    </div>
+    <div class="cookie-actions">
+      <button class="cookie-secondary" type="button" id="cookiePreferences">Preferências de Cookies</button>
+      <button class="cookie-primary" type="button" id="cookieAllow">Permitir cookies</button>
+    </div>
+  </div>
+
+  <div class="cookie-modal" id="cookieModal" aria-hidden="true">
+    <div class="cookie-modal-backdrop" data-cookie-close></div>
+    <div class="cookie-modal-card" role="dialog" aria-modal="true" aria-labelledby="cookieModalTitle">
+      <button class="cookie-modal-close" type="button" data-cookie-close aria-label="Fechar preferências">×</button>
+      <span class="kicker">Preferências</span>
+      <h2 id="cookieModalTitle">Preferências de Cookies</h2>
+      <p>Escolha quais cookies podem ser usados para melhorar sua experiência no site.</p>
+
+      <label class="cookie-option">
+        <span><strong>Essenciais</strong><small>Necessários para segurança e funcionamento básico.</small></span>
+        <input type="checkbox" checked disabled>
+      </label>
+      <label class="cookie-option">
+        <span><strong>Desempenho</strong><small>Ajudam a entender visitas e melhorar a navegação.</small></span>
+        <input type="checkbox" id="cookieAnalytics">
+      </label>
+      <label class="cookie-option">
+        <span><strong>Marketing</strong><small>Permitem personalizar conteúdo, anúncios e campanhas.</small></span>
+        <input type="checkbox" id="cookieMarketing">
+      </label>
+
+      <div class="cookie-modal-actions">
+        <button class="cookie-secondary" type="button" id="cookieReject">Usar apenas essenciais</button>
+        <button class="cookie-primary" type="button" id="cookieSave">Salvar preferências</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
