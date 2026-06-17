@@ -787,12 +787,41 @@ if(menuYear) menuYear.textContent = currentYear;
 
 // Lightweight reveal.
 (function(){
-  const items = document.querySelectorAll(".reveal");
+  document.querySelectorAll("main section:not(#inicio):not([hidden]) > .container > :not(.reveal)").forEach((item) => {
+    if(item.closest(".demo-modal,.system-modal,.install-modal,.cookie-modal")) return;
+    item.classList.add("reveal");
+  });
+
+  const items = Array.from(document.querySelectorAll(".reveal"));
   if(!items.length) return;
   if(reduceMotion){
     items.forEach((item) => item.classList.add("active"));
     return;
   }
+
+  const groupedByParent = new Map();
+  items.forEach((item) => {
+    const parent = item.parentElement;
+    if(!parent) return;
+    const group = groupedByParent.get(parent) || [];
+    group.push(item);
+    groupedByParent.set(parent, group);
+
+    if(item.matches(".photo-stack,.process-photo,.ioasys-about-showcase,.location-map,.gb-scroll-visual")) {
+      item.classList.add("reveal-right");
+    } else if(item.matches(".contact-form,.before-after-panel,.demo-stage,.system-preview")) {
+      item.classList.add("reveal-zoom");
+    } else if(item.matches(".section-title,.studios-title,.gb-scroll-copy,.contact-copy,.faq-copy,.transformation-copy,.about-content")) {
+      item.classList.add("reveal-left");
+    }
+  });
+
+  groupedByParent.forEach((group) => {
+    group.forEach((item, index) => {
+      item.style.setProperty("--reveal-delay", `${Math.min(index * 80, 360)}ms`);
+    });
+  });
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if(entry.isIntersecting){
@@ -800,7 +829,7 @@ if(menuYear) menuYear.textContent = currentYear;
         observer.unobserve(entry.target);
       }
     });
-  }, { rootMargin:"0px 0px -8% 0px", threshold:.08 });
+  }, { rootMargin:"0px 0px -10% 0px", threshold:.1 });
   items.forEach((item) => observer.observe(item));
 })();
 
@@ -1190,26 +1219,6 @@ document.querySelectorAll("[data-install-direct]").forEach((button) => {
   });
 });
 document.querySelectorAll("[data-close-install-modal]").forEach((button) => button.addEventListener("click", closeInstallModal));
-
-// Entry ad modal.
-const entryAdModal = document.getElementById("entryAdModal");
-function openEntryAd(){
-  if(!entryAdModal) return;
-  entryAdModal.setAttribute("aria-hidden", "false");
-  document.body.classList.add("menu-is-open");
-}
-function closeEntryAd(){
-  if(!entryAdModal) return;
-  entryAdModal.setAttribute("aria-hidden", "true");
-  document.body.classList.remove("menu-is-open");
-}
-if(entryAdModal){
-  window.addEventListener("load", openEntryAd);
-  document.querySelectorAll("[data-close-entry-ad]").forEach((button) => button.addEventListener("click", closeEntryAd));
-  document.addEventListener("keydown", (event) => {
-    if(event.key === "Escape" && entryAdModal.getAttribute("aria-hidden") === "false") closeEntryAd();
-  });
-}
 
 // PWA registration. Works on HTTPS/Vercel and keeps the installed app updated.
 if("serviceWorker" in navigator){
