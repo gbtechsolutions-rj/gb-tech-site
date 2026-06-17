@@ -3744,17 +3744,20 @@ html[data-theme="light"] .install-app-card p{
   }
   .io-hero-layer{
     align-content:start;
-    gap:18px;
-    padding:clamp(128px,30vw,154px) 22px 92px;
+    gap:0;
+    padding:clamp(118px,27vw,138px) 24px 92px;
     overflow:hidden;
   }
   .io-hero-title{
+    order:1;
     width:100%;
     max-width:100%;
-    font-size:clamp(2.55rem,11.2vw,3.55rem);
-    line-height:.94;
+    margin:0;
+    padding:0 0 18px;
+    font-size:clamp(2rem,8.9vw,2.9rem);
+    line-height:1.04;
     letter-spacing:0;
-    overflow:hidden;
+    overflow:visible;
   }
   .io-title-white,
   .io-title-yellow,
@@ -3764,22 +3767,30 @@ html[data-theme="light"] .install-app-card p{
     word-break:normal;
   }
   .io-title-yellow{
-    margin-top:2px;
+    margin-top:4px;
   }
   .io-title-small{
-    margin-top:8px;
-    font-size:.58em;
-    line-height:1.02;
+    margin-top:12px;
+    margin-bottom:0;
+    font-size:.38em;
+    line-height:1.15;
   }
   .io-copy{
+    order:2;
+    position:relative;
+    left:auto;
+    bottom:auto;
     width:100%;
     max-width:100%;
+    margin-top:0;
+    padding-top:10px;
   }
   .io-hero-desc{
     max-width:100%;
-    margin-bottom:18px;
-    font-size:.96rem;
-    line-height:1.55;
+    margin-top:0;
+    margin-bottom:20px;
+    font-size:.9rem;
+    line-height:1.62;
   }
   .io-hero-actions{
     width:100%;
@@ -3825,12 +3836,12 @@ html[data-theme="light"] .install-app-card p{
     width:min(230px,calc(100vw - 28px));
   }
   .io-nav{
-    height:76px;
+    height:72px;
     min-height:0;
     display:grid;
-    grid-template-columns:minmax(118px,1fr) auto;
+    grid-template-columns:minmax(108px,1fr) auto;
     align-items:center;
-    gap:10px;
+    gap:8px;
     padding:0;
   }
   .io-brand{
@@ -3840,8 +3851,8 @@ html[data-theme="light"] .install-app-card p{
     min-width:0;
   }
   .io-brand-img{
-    width:156px;
-    max-width:42vw;
+    width:138px;
+    max-width:36vw;
   }
   .io-nav-actions{
     grid-column:2;
@@ -3852,31 +3863,22 @@ html[data-theme="light"] .install-app-card p{
     gap:6px;
     min-width:0;
   }
-  .io-nav-actions .top-socials{
-    margin-right:0;
-  }
   .top-socials{
-    display:inline-flex;
-    gap:5px;
-  }
-  .top-socials a{
-    width:32px;
-    height:32px;
-  }
-  .top-socials svg{
-    width:16px;
-    height:16px;
+    display:none!important;
   }
   .language-switcher,
   .theme-switcher{
     padding:3px;
     gap:2px;
+    flex:0 0 auto;
   }
   .language-switcher button,
   .theme-switcher button{
-    min-height:28px;
-    padding:0 6px;
-    font-size:.62rem;
+    min-height:30px;
+    padding:0 7px;
+    font-size:.64rem;
+    line-height:1;
+    white-space:nowrap;
   }
   .install-app-top{
     display:none;
@@ -3911,29 +3913,24 @@ html[data-theme="light"] .install-app-card p{
     height:25px;
   }
   .io-nav{
-    grid-template-columns:minmax(104px,1fr) auto;
+    grid-template-columns:minmax(96px,1fr) auto;
     gap:6px;
   }
   .io-brand-img{
-    width:136px;
+    width:124px;
     max-width:34vw;
   }
   .io-nav-actions{
     gap:4px;
-  }
-  .top-socials a{
-    width:28px;
-    height:28px;
-  }
-  .top-socials svg{
-    width:14px;
-    height:14px;
   }
   .language-switcher button,
   .theme-switcher button{
     min-height:26px;
     padding:0 5px;
     font-size:.56rem;
+  }
+  .theme-switcher{
+    display:none;
   }
   .menu-trigger{
     width:38px;
