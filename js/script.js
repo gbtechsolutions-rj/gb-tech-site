@@ -1025,7 +1025,7 @@ document.querySelectorAll("[data-system-image]").forEach((image) => {
       "",
       `Mensagem: ${getValue("message")}`
     ];
-    window.open(`https://wa.me/5521964589848?text=${encodeURIComponent(message.join("\n"))}`, "_blank", "noopener");
+    window.open(`https://wa.me/5521965829441?text=${encodeURIComponent(message.join("\n"))}`, "_blank", "noopener");
   });
 })();
 
