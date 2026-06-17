@@ -142,7 +142,6 @@ if(menuYear) menuYear.textContent = currentYear;
     "e confirme a instalação.":"button and confirm the installation.",
     "Instale no iPhone ou iPad":"Install on iPhone or iPad",
     "Abra este site pelo":"Open this site in",
-    "Safari":"Safari",
     "toque no botão de compartilhar e escolha":"tap the share button and choose",
     "Depois disso, o ícone da GB Tech aparece como app na tela inicial.":"After that, the GB Tech icon appears as an app on your home screen.",
     "Instale no Android":"Install on Android",
@@ -156,7 +155,7 @@ if(menuYear) menuYear.textContent = currentYear;
     "No Android, toque no menu do navegador e escolha":"On Android, tap the browser menu and choose",
     "ou":"or",
     "Adicionar à tela inicial":"Add to home screen",
-    "No iPhone, abra pelo Safari, toque em compartilhar e escolha":"On iPhone, open it in Safari, tap share, and choose",
+    "No iPhone, toque em compartilhar ou no menu do navegador e escolha":"On iPhone, tap share or the browser menu and choose",
     "Adicionar à Tela de Início":"Add to Home Screen",
     "Antes e depois":"Before and after",
     "Depoimentos":"Testimonials",
@@ -1089,7 +1088,7 @@ function getInstallInstructions(){
   if(context.isIOS){
     return {
       title:"Instale no iPhone ou iPad",
-      html:"<p>Abra este site pelo <strong>Safari</strong>, toque no botão de compartilhar e escolha <strong>Adicionar à Tela de Início</strong>.</p><p>Depois disso, o ícone da GB Tech aparece como app na tela inicial.</p>"
+      html:"<p>No iPhone, toque em compartilhar ou no menu do navegador e escolha <strong>Adicionar à Tela de Início</strong> ou <strong>Instalar app</strong>.</p><p>Depois disso, o ícone da GB Tech aparece como app na tela inicial quando o navegador permitir.</p>"
     };
   }
   if(context.isAndroid){
