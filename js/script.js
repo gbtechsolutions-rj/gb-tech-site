@@ -45,7 +45,35 @@ function setMenu(open){
 mobile?.addEventListener("click", () => setMenu(!menu.classList.contains("open")));
 menuClose?.addEventListener("click", () => setMenu(false));
 menuBg?.addEventListener("click", () => setMenu(false));
-document.querySelectorAll(".menu a").forEach((link) => link.addEventListener("click", () => setMenu(false)));
+document.querySelectorAll(".menu-link[href^='#']").forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const targetId = link.getAttribute("href");
+    const target = targetId && document.querySelector(targetId);
+    if(!target) {
+      setMenu(false);
+      return;
+    }
+
+    event.preventDefault();
+    setMenu(false);
+
+    window.setTimeout(() => {
+      const headerHeight = document.querySelector(".io-header")?.offsetHeight || 0;
+      const extraGap = targetId === "#inicio" ? 0 : 12;
+      const top = targetId === "#inicio"
+        ? 0
+        : target.getBoundingClientRect().top + window.scrollY - headerHeight - extraGap;
+
+      window.scrollTo({
+        top:Math.max(0, top),
+        behavior:reduceMotion ? "auto" : "smooth"
+      });
+
+      history.pushState(null, "", targetId);
+    }, 80);
+  });
+});
+document.querySelectorAll(".menu a:not(.menu-link)").forEach((link) => link.addEventListener("click", () => setMenu(false)));
 document.addEventListener("keydown", (event) => {
   if(event.key === "Escape") {
     setMenu(false);
