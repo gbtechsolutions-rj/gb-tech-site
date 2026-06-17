@@ -854,23 +854,24 @@ if(menuYear) menuYear.textContent = currentYear;
   items.forEach((item) => observer.observe(item));
 })();
 
-// Animated numeric steps for the process section.
+// Animated numeric counters for authority and process sections.
 (function(){
-  const numbers = Array.from(document.querySelectorAll(".steps .num"));
+  const numbers = Array.from(document.querySelectorAll(".steps .num, .stat-number[data-count-to]"));
   if(!numbers.length || reduceMotion) return;
 
   const animateNumber = (element) => {
-    const target = Number.parseInt(element.textContent, 10);
+    const target = Number.parseInt(element.dataset.countTo || element.textContent, 10);
     if(!Number.isFinite(target) || element.dataset.counted === "true") return;
     element.dataset.counted = "true";
 
-    const duration = 520;
+    const startsAtOne = element.classList.contains("num");
+    const duration = startsAtOne ? 520 : 900;
     const start = performance.now();
 
     const tick = (now) => {
       const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      element.textContent = Math.max(1, Math.round(target * eased));
+      element.textContent = Math.max(startsAtOne ? 1 : 0, Math.round(target * eased));
       if(progress < 1) {
         requestAnimationFrame(tick);
       } else {
@@ -878,7 +879,7 @@ if(menuYear) menuYear.textContent = currentYear;
       }
     };
 
-    element.textContent = "1";
+    element.textContent = startsAtOne ? "1" : "0";
     requestAnimationFrame(tick);
   };
 
