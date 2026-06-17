@@ -197,6 +197,25 @@ if(menuYear) menuYear.textContent = currentYear;
     "Solicitar orçamento":"Request a quote",
     "Solicitar projeto":"Request project",
     "Ver soluções":"See solutions",
+    "Sites, sistemas":"Websites, systems",
+    "e automações":"and automations",
+    "para vender mais":"to sell more",
+    "Criamos soluções digitais profissionais para empresas que querem vender mais, automatizar processos e crescer com tecnologia.":"We create professional digital solutions for companies that want to sell more, automate processes, and grow with technology.",
+    "Sites e sistemas":"Websites and systems",
+    "desenvolvidos com foco comercial":"developed with commercial focus",
+    "Soluções personalizadas":"Custom digital solutions",
+    "para rotinas reais de empresas":"for real company routines",
+    "Negócios locais":"Local businesses",
+    "atendidos com estratégia digital":"served with digital strategy",
+    "Resultado e automação":"Results and automation",
+    "como prioridade em cada projeto":"as a priority in every project",
+    "Automatizar meu negócio":"Automate my business",
+    "Ver demonstração":"View demo",
+    "Quero um orçamento":"I want a quote",
+    "Falar com especialista":"Talk to a specialist",
+    "Solicitar demonstração":"Request a demo",
+    "Pronto para transformar sua empresa com tecnologia?":"Ready to transform your company with technology?",
+    "Falar no WhatsApp":"Talk on WhatsApp",
     "Role para explorar":"Scroll to explore",
     "produto digital":"digital product",
     "dados e IA":"data and AI",
@@ -665,11 +684,11 @@ if(menuYear) menuYear.textContent = currentYear;
   if(!word || reduceMotion) return;
 
   const items = [
-    { pt:["solutions","site premium","automação"], en:["solutions","premium website","automation"] },
-    { pt:["sites","landing pages","captação"], en:["websites","landing pages","lead capture"] },
-    { pt:["sistemas","sistema SaaS","dashboards"], en:["systems","SaaS system","dashboards"] },
-    { pt:["apps","cardápio digital","WhatsApp"], en:["apps","digital menu","WhatsApp"] },
-    { pt:["IA","IA aplicada","processos"], en:["AI","applied AI","processes"] }
+    { pt:["e automações","site premium","automação"], en:["and automations","premium website","automation"] },
+    { pt:["personalizados","landing pages","captação"], en:["custom-built","landing pages","lead capture"] },
+    { pt:["com sistemas","sistema web","dashboards"], en:["with systems","web system","dashboards"] },
+    { pt:["com aplicativos","cardápio digital","WhatsApp"], en:["with apps","digital menu","WhatsApp"] },
+    { pt:["com IA","IA aplicada","processos"], en:["with AI","applied AI","processes"] }
   ];
   let index = 0;
   let timer;
