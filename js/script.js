@@ -720,8 +720,8 @@ if(menuYear) menuYear.textContent = currentYear;
   if(!videos.length) return;
 
   const loadVideo = (video) => {
-    const source = video.querySelector("source[data-src]");
-    if(!source || source.src) return;
+    const source = video.querySelector("source");
+    if(!source) return;
     const mediaQuery = source.getAttribute("media");
     const cut = video.closest(".io-video-cut");
     if(mediaQuery && !window.matchMedia(mediaQuery).matches) {
@@ -729,25 +729,32 @@ if(menuYear) menuYear.textContent = currentYear;
       return;
     }
 
-    const fallbackTimer = window.setTimeout(() => {
-      if(!cut?.classList.contains("is-video-ready")) {
-        cut?.classList.add("is-fallback-visible");
-      }
-    }, 5200);
-
-    video.addEventListener("canplay", () => {
+    let ready = false;
+    const markReady = () => {
+      if(ready) return;
+      ready = true;
       window.clearTimeout(fallbackTimer);
       cut?.classList.add("is-video-ready");
       cut?.classList.remove("is-fallback-visible");
       video.play().catch(() => {});
-    }, { once:true });
+    };
+
+    const fallbackTimer = window.setTimeout(() => {
+      if(!cut?.classList.contains("is-video-ready")) {
+        cut?.classList.add("is-fallback-visible");
+      }
+    }, 2600);
+
+    video.addEventListener("loadeddata", markReady, { once:true });
+    video.addEventListener("canplay", markReady, { once:true });
     video.addEventListener("error", () => {
       window.clearTimeout(fallbackTimer);
       cut?.classList.add("is-fallback-visible");
     }, { once:true });
 
-    source.src = source.dataset.src;
+    if(source.dataset.src && !source.src) source.src = source.dataset.src;
     video.load();
+    if(video.readyState >= 3) markReady();
   };
 
   const loadHeroMedia = () => {
@@ -755,15 +762,10 @@ if(menuYear) menuYear.textContent = currentYear;
     if(firstVideo) loadVideo(firstVideo);
   };
 
-  if("requestIdleCallback" in window) {
-    window.addEventListener("load", () => {
-      window.requestIdleCallback(loadHeroMedia, { timeout: 1200 });
-    }, { once:true });
-  } else {
-    window.addEventListener("load", () => {
-      window.setTimeout(loadHeroMedia, 500);
-    }, { once:true });
-  }
+  loadHeroMedia();
+  window.addEventListener("load", () => {
+    videos.slice(1).forEach(loadVideo);
+  }, { once:true });
 })();
 
 // Partners carousel arrows.
@@ -850,6 +852,45 @@ if(menuYear) menuYear.textContent = currentYear;
     });
   }, { rootMargin:"0px 0px -10% 0px", threshold:.1 });
   items.forEach((item) => observer.observe(item));
+})();
+
+// Animated numeric steps for the process section.
+(function(){
+  const numbers = Array.from(document.querySelectorAll(".steps .num"));
+  if(!numbers.length || reduceMotion) return;
+
+  const animateNumber = (element) => {
+    const target = Number.parseInt(element.textContent, 10);
+    if(!Number.isFinite(target) || element.dataset.counted === "true") return;
+    element.dataset.counted = "true";
+
+    const duration = 520;
+    const start = performance.now();
+
+    const tick = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      element.textContent = Math.max(1, Math.round(target * eased));
+      if(progress < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        element.textContent = target;
+      }
+    };
+
+    element.textContent = "1";
+    requestAnimationFrame(tick);
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if(!entry.isIntersecting) return;
+      animateNumber(entry.target);
+      observer.unobserve(entry.target);
+    });
+  }, { threshold:.55 });
+
+  numbers.forEach((number) => observer.observe(number));
 })();
 
 // Scroll experience tabs without scroll listeners.

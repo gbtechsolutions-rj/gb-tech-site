@@ -1360,7 +1360,7 @@ section{width:100%;position:relative}
   grid-template-columns:repeat(3,1fr);
   gap:20px;
 }
-.case{cursor:pointer}
+.case{position:relative;cursor:pointer}
 .case-img{position:relative}
 .open-badge{
   position:absolute;
@@ -1374,6 +1374,129 @@ section{width:100%;position:relative}
   font-weight:900;
 }
 .case-btn{width:100%;margin-top:20px}
+.case::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(180deg,transparent 45%,rgba(16,184,216,.18));
+  opacity:0;
+  transition:opacity .25s ease;
+}
+.case:hover::after{opacity:1}
+.case:hover .case-btn{
+  background:linear-gradient(135deg,var(--blue),var(--cyan));
+  color:#fff;
+  box-shadow:0 16px 36px rgba(16,184,216,.25);
+}
+
+.featured-cases-section,.differentials-section{
+  padding:clamp(78px,10vw,132px) 0;
+  border-top:1px solid var(--line);
+}
+.featured-cases-section{
+  background:radial-gradient(circle at 84% 12%,rgba(16,184,216,.14),transparent 30%),linear-gradient(135deg,#070d16,#101827 62%,#050914);
+}
+.featured-cases-grid{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(220px,1fr));
+  gap:18px;
+}
+.featured-case-card{
+  position:relative;
+  min-height:430px;
+  display:grid;
+  grid-template-rows:190px 1fr;
+  overflow:hidden;
+  border:1px solid rgba(99,227,255,.18);
+  border-radius:18px;
+  background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.028));
+  box-shadow:0 20px 54px rgba(0,0,0,.2);
+  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
+}
+.featured-case-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(99,227,255,.36);
+  box-shadow:0 28px 80px rgba(0,0,0,.3);
+}
+.featured-case-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .35s ease,filter .35s ease;
+}
+.featured-case-card:hover img{
+  transform:scale(1.06);
+  filter:saturate(1.12) contrast(1.06);
+}
+.featured-case-card div{
+  display:grid;
+  align-content:start;
+  gap:10px;
+  padding:20px;
+}
+.featured-case-card span{
+  width:max-content;
+  padding:7px 10px;
+  border-radius:999px;
+  color:#8fe9ff;
+  background:rgba(16,184,216,.12);
+  font-size:.76rem;
+  font-weight:950;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.featured-case-card h3{color:#fff;font-size:1.15rem;line-height:1.12}
+.featured-case-card p{color:var(--muted);line-height:1.55}
+.case-demo-link{
+  position:relative;
+  align-self:end;
+  width:100%;
+  min-height:44px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:6px;
+  border-radius:999px;
+  color:#fff;
+  background:linear-gradient(135deg,var(--blue),var(--cyan));
+  font-weight:950;
+  overflow:hidden;
+  box-shadow:0 14px 32px rgba(16,184,216,.2);
+  transition:transform .22s ease,box-shadow .22s ease,filter .22s ease;
+}
+.case-demo-link:hover{
+  transform:translateY(-2px);
+  box-shadow:0 20px 44px rgba(16,184,216,.28);
+  filter:saturate(1.08);
+}
+.differentials-section{
+  background:radial-gradient(circle at 16% 18%,rgba(34,197,94,.12),transparent 30%),linear-gradient(135deg,#06100d,#0d1726 62%,#050914);
+}
+.differentials-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:18px;
+}
+.differential-card{
+  min-height:230px;
+  display:grid;
+  align-content:start;
+  gap:12px;
+  padding:24px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.028));
+  transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;
+}
+.differential-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(99,227,255,.34);
+  box-shadow:0 24px 64px rgba(0,0,0,.24);
+}
+.differential-card span{font-size:2rem}
+.differential-card h3{color:#fff;font-size:1.25rem}
+.differential-card p{color:var(--muted);line-height:1.6}
 .demo-tabs{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:24px}
 .demo-tab{
   min-height:44px;
@@ -1963,11 +2086,60 @@ section{width:100%;position:relative}
 }
 .price-card{padding:28px}
 .price-card.featured{
+  position:relative;
+  transform:translateY(-8px);
   border-color:rgba(16,184,216,.55);
   background:
     radial-gradient(circle at 20% 0%,rgba(16,184,216,.22),transparent 34%),
     linear-gradient(145deg,rgba(21,94,239,.22),rgba(255,255,255,.04));
-  box-shadow:0 22px 62px rgba(16,184,216,.12);
+  box-shadow:0 30px 90px rgba(16,184,216,.18),0 0 0 1px rgba(99,227,255,.12) inset;
+}
+.price-card.featured::after{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  z-index:-1;
+  border-radius:inherit;
+  background:linear-gradient(135deg,rgba(21,94,239,.42),rgba(16,184,216,.42),transparent 62%);
+  filter:blur(18px);
+  opacity:.42;
+}
+.price-card.featured .btn{
+  box-shadow:0 18px 40px rgba(16,184,216,.25);
+}
+.authority-banner{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:14px;
+  margin-bottom:34px;
+  padding:14px;
+  border:1px solid rgba(99,227,255,.16);
+  border-radius:22px;
+  background:
+    radial-gradient(circle at 12% 20%,rgba(16,184,216,.22),transparent 32%),
+    linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.028));
+  box-shadow:0 24px 70px rgba(0,0,0,.2);
+}
+.authority-banner span{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:16px;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;
+  color:#fff;
+  background:rgba(3,10,22,.55);
+  font-weight:950;
+  line-height:1.18;
+  box-shadow:0 12px 30px rgba(0,0,0,.12);
+  transition:transform .22s ease,border-color .22s ease,background .22s ease;
+}
+.authority-banner span:hover{
+  transform:translateY(-3px);
+  border-color:rgba(99,227,255,.34);
+  background:rgba(16,184,216,.12);
 }
 .plan-badge{
   display:inline-flex;
@@ -2374,6 +2546,23 @@ footer{
   0%,100%{transform:translateY(0);box-shadow:0 18px 38px rgba(34,197,94,.32)}
   50%{transform:translateY(-3px);box-shadow:0 24px 52px rgba(34,197,94,.42)}
 }
+.case-demo-link::after{
+  content:"";
+  position:absolute;
+  top:-35%;
+  bottom:-35%;
+  left:-45%;
+  width:38%;
+  transform:skewX(-18deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent);
+  opacity:.7;
+  animation:buttonSheen 4.8s ease-in-out infinite;
+}
+@keyframes buttonSheen{
+  0%,68%{left:-52%;opacity:0}
+  78%{opacity:.75}
+  100%{left:118%;opacity:0}
+}
 .cookie-consent{
   position:fixed;
   left:clamp(14px,3vw,42px);
@@ -2652,6 +2841,8 @@ html[data-theme="light"] .tech-stack-section,
 html[data-theme="light"] .whatsapp-automation-highlight,
 html[data-theme="light"] .automation-comparison-section,
 html[data-theme="light"] .founder-section,
+html[data-theme="light"] .featured-cases-section,
+html[data-theme="light"] .differentials-section,
 html[data-theme="light"] .location-section{
   background:
     radial-gradient(circle at 85% 10%,rgba(16,184,216,.12),transparent 30%),
@@ -2676,6 +2867,10 @@ html[data-theme="light"] .client-testimonial-card,
 html[data-theme="light"] .tech-pill,
 html[data-theme="light"] .comparison-card,
 html[data-theme="light"] .whatsapp-automation-card,
+html[data-theme="light"] .featured-case-card,
+html[data-theme="light"] .differential-card,
+html[data-theme="light"] .authority-banner,
+html[data-theme="light"] .authority-banner span,
 html[data-theme="light"] .location-details span,
 html[data-theme="light"] .location-map{
   border-color:rgba(15,23,42,.12);
@@ -2701,6 +2896,9 @@ html[data-theme="light"] .tech-pill strong,
 html[data-theme="light"] .comparison-card h3,
 html[data-theme="light"] .founder-copy h2,
 html[data-theme="light"] .whatsapp-automation-copy h2,
+html[data-theme="light"] .featured-case-card h3,
+html[data-theme="light"] .differential-card h3,
+html[data-theme="light"] .authority-banner span,
 html[data-theme="light"] .features,
 html[data-theme="light"] .price{
   color:#101828;
@@ -2711,6 +2909,8 @@ html[data-theme="light"] .after-card li,
 html[data-theme="light"] .automation-benefits-grid span,
 html[data-theme="light"] .comparison-card li,
 html[data-theme="light"] .client-testimonial-card p,
+html[data-theme="light"] .featured-case-card p,
+html[data-theme="light"] .differential-card p,
 html[data-theme="light"] .location-details{
   color:#344054;
 }
@@ -2724,6 +2924,9 @@ html[data-theme="light"] .price-card.featured,
 html[data-theme="light"] .subscription-card.featured{
   border-color:rgba(15,23,42,.12);
   background:rgba(255,255,255,.88);
+}
+html[data-theme="light"] .authority-banner{
+  background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(232,241,248,.86));
 }
 html[data-theme="light"] .menu-overlay-bg{
   background:rgba(15,23,42,.28);
@@ -2814,7 +3017,10 @@ html[data-theme="light"] .install-app-card p{
   .tech-stack-grid,
   .whatsapp-automation-card,
   .automation-comparison-grid,
-  .founder-grid{grid-template-columns:1fr 1fr}
+  .founder-grid,
+  .featured-cases-grid,
+  .differentials-grid,
+  .authority-banner{grid-template-columns:1fr 1fr}
   .wide-promo-card{grid-template-columns:1fr}
   .wide-promo-actions{
     width:100%;
@@ -2844,7 +3050,24 @@ html[data-theme="light"] .install-app-card p{
   .whatsapp-automation-card,
   .automation-benefits-grid,
   .automation-comparison-grid,
-  .founder-grid{grid-template-columns:1fr}
+  .founder-grid,
+  .featured-cases-grid,
+  .differentials-grid,
+  .authority-banner{grid-template-columns:1fr}
+  .featured-case-card{
+    min-height:auto;
+    grid-template-rows:210px 1fr;
+  }
+  .authority-banner{
+    padding:12px;
+    border-radius:18px;
+  }
+  .authority-banner span{
+    min-height:64px;
+  }
+  .price-card.featured{
+    transform:none;
+  }
   .authority-grid{grid-template-columns:1fr}
   .before-after-panel::before{display:none}
   .before-card,.after-card,.proof-card{min-height:auto}
@@ -3099,6 +3322,9 @@ html[data-theme="light"] .install-app-card p{
   .showcase-grid,
   .subscription-grid,
   .pricing-grid,
+  .featured-cases-grid,
+  .differentials-grid,
+  .authority-banner,
   .before-after-panel,
   .modal-feature-grid{
     grid-template-columns:1fr;
@@ -3404,6 +3630,22 @@ html[data-theme="light"] .install-app-card p{
   .io-header{
     background:linear-gradient(180deg,rgba(2,6,16,.96),rgba(2,6,16,.78));
   }
+  .whatsapp-quick{
+    right:14px;
+    bottom:18px;
+  }
+  .whatsapp{
+    width:54px;
+    min-width:54px;
+    height:54px;
+    padding:0;
+  }
+  .whatsapp span{
+    display:none;
+  }
+  .whatsapp-options{
+    width:min(230px,calc(100vw - 28px));
+  }
   .io-nav{
     height:76px;
     min-height:0;
@@ -3477,6 +3719,19 @@ html[data-theme="light"] .install-app-card p{
 }
 
 @media (max-width:430px){
+  .whatsapp-quick{
+    right:12px;
+    bottom:14px;
+  }
+  .whatsapp{
+    width:50px;
+    min-width:50px;
+    height:50px;
+  }
+  .whatsapp svg{
+    width:25px;
+    height:25px;
+  }
   .io-nav{
     grid-template-columns:minmax(104px,1fr) auto;
     gap:6px;

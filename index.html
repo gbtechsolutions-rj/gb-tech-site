@@ -139,9 +139,9 @@
       <div class="io-right-panel" aria-label="Vídeo tecnológico com cortes no topo">
         <!-- Midia do topo: o video entra quando estiver pronto; a imagem local fica apenas como plano B. -->
         <div class="io-video-cut io-cut-one">
-          <img class="io-video-fallback" src="assets/img/fluxo-02-design-interface.jpg" alt="" aria-hidden="true" fetchpriority="high" decoding="async">
-          <video muted loop playsinline preload="metadata" poster="assets/img/fluxo-02-design-interface.jpg">
-            <source data-src="https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+          <img class="io-video-fallback" src="assets/img/fluxo-02-design-interface.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">
+          <video muted loop playsinline autoplay preload="auto" poster="assets/img/fluxo-02-design-interface.jpg">
+            <source src="https://videos.pexels.com/video-files/3209828/3209828-uhd_2560_1440_25fps.mp4" type="video/mp4" />
           </video>
         </div>
         <div class="io-video-cut io-cut-two">
@@ -423,6 +423,24 @@
       </div>
     </section>
 
+    <section class="differentials-section" aria-label="Diferenciais da GB Tech Solutions">
+      <div class="container">
+        <div class="section-title reveal">
+          <span class="kicker">Diferenciais</span>
+          <h2>Por que escolher a GB Tech Solutions?</h2>
+          <p>Combinamos desenvolvimento, estratégia comercial e automação para entregar soluções digitais profissionais e prontas para gerar resultado.</p>
+        </div>
+        <div class="differentials-grid">
+          <article class="differential-card reveal"><span>⚡</span><h3>Desenvolvimento rápido</h3><p>Processo direto, comunicação clara e foco no que gera impacto.</p></article>
+          <article class="differential-card reveal"><span>🔒</span><h3>Soluções seguras</h3><p>Estrutura organizada, boas práticas e cuidado com dados do negócio.</p></article>
+          <article class="differential-card reveal"><span>📱</span><h3>Compatível com celular</h3><p>Layouts responsivos para funcionar bem em mobile, tablet e desktop.</p></article>
+          <article class="differential-card reveal"><span>🤖</span><h3>Automações inteligentes</h3><p>Fluxos para WhatsApp, Instagram, atendimento e processos internos.</p></article>
+          <article class="differential-card reveal"><span>🛠️</span><h3>Suporte contínuo</h3><p>Orientação após a entrega e possibilidade de evolução do projeto.</p></article>
+          <article class="differential-card reveal"><span>🎯</span><h3>Projetos personalizados</h3><p>Soluções moldadas para o objetivo e a rotina real da empresa.</p></article>
+        </div>
+      </div>
+    </section>
+
     <section class="audience-section" id="publico">
       <div class="container">
         <div class="section-title reveal">
@@ -580,15 +598,17 @@
         <div class="reveal">
           <div class="kicker">Método de trabalho</div>
           <div class="section-title left">
-            <h2>Do primeiro contato até o projeto online.</h2>
-            <p>Seguimos um processo direto para entender, planejar, desenvolver e entregar com clareza.</p>
+            <h2>Como funciona nosso processo</h2>
+            <p>Seguimos uma jornada clara para transformar a necessidade da empresa em solução digital pronta para uso.</p>
           </div>
 
           <div class="steps">
-            <div class="step"><div class="num">1</div><div><h3>Diagnóstico</h3><p>Entendemos seu negócio, serviço, público e objetivo principal.</p></div></div>
-            <div class="step"><div class="num">2</div><div><h3>Estratégia</h3><p>Definimos a estrutura ideal: site, sistema, cardápio digital, app ou automação.</p></div></div>
-            <div class="step"><div class="num">3</div><div><h3>Desenvolvimento</h3><p>Criamos o visual, funcionalidades, integração com WhatsApp e recursos necessários.</p></div></div>
-            <div class="step"><div class="num">4</div><div><h3>Entrega e suporte</h3><p>Publicamos o projeto, ajustamos os detalhes finais e orientamos o uso.</p></div></div>
+            <div class="step"><div class="num">1</div><div><h3>Entendemos seu projeto</h3><p>Analisamos objetivo, público, rotina e necessidade comercial.</p></div></div>
+            <div class="step"><div class="num">2</div><div><h3>Planejamos a solução</h3><p>Definimos estrutura, funcionalidades, integrações e prioridade.</p></div></div>
+            <div class="step"><div class="num">3</div><div><h3>Desenvolvemos</h3><p>Criamos visual, código, automações, sistema ou aplicativo.</p></div></div>
+            <div class="step"><div class="num">4</div><div><h3>Realizamos testes</h3><p>Validamos responsividade, links, WhatsApp, fluxos e usabilidade.</p></div></div>
+            <div class="step"><div class="num">5</div><div><h3>Entregamos</h3><p>Publicamos o projeto e orientamos o uso da solução.</p></div></div>
+            <div class="step"><div class="num">6</div><div><h3>Oferecemos suporte</h3><p>Acompanhamos ajustes e evolução conforme a necessidade.</p></div></div>
           </div>
         </div>
       </div>
@@ -642,6 +662,39 @@
               <p>Para empresas locais que precisam transmitir confiança e captar contatos qualificados.</p>
               <button class="case-btn" type="button">Ver demonstração</button>
             </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-cases-section" aria-label="Projetos e soluções desenvolvidas">
+      <div class="container">
+        <div class="section-title reveal">
+          <span class="kicker">Cases e soluções</span>
+          <h2>Projetos e Soluções Desenvolvidas</h2>
+          <p>Modelos de entrega para empresas que precisam de criação de sites profissionais, desenvolvimento de sistemas, aplicativos e automação empresarial.</p>
+        </div>
+
+        <div class="featured-cases-grid">
+          <article class="featured-case-card reveal">
+            <img src="assets/img/produto-site-institucional.jpg" alt="Site profissional desenvolvido pela GB Tech Solutions" loading="lazy" decoding="async">
+            <div><span>Sites Profissionais</span><h3>Presença digital para gerar confiança e contatos</h3><p>Sites responsivos com WhatsApp, Google Maps, SEO básico e estrutura comercial.</p><a class="case-demo-link" href="#portfolio">Ver Demonstração</a></div>
+          </article>
+          <article class="featured-case-card reveal">
+            <img src="assets/img/fluxo-03-sistemas-automacoes.jpg" alt="Sistema web com dashboards e controle de dados" loading="lazy" decoding="async">
+            <div><span>Sistemas Web</span><h3>Gestão, relatórios e processos em uma plataforma</h3><p>Sistemas personalizados para organizar atendimento, pedidos, clientes e operação.</p><a class="case-demo-link" href="#portfolio">Ver Demonstração</a></div>
+          </article>
+          <article class="featured-case-card reveal">
+            <img src="assets/img/servico-apps-pwa.jpg" alt="Aplicativo e PWA desenvolvido para empresas" loading="lazy" decoding="async">
+            <div><span>Aplicativos</span><h3>Experiência mobile para clientes e equipes</h3><p>Aplicativos e PWAs com acesso rápido, visual moderno e uso simples no celular.</p><a class="case-demo-link" href="#produtos-prontos">Ver Demonstração</a></div>
+          </article>
+          <article class="featured-case-card reveal">
+            <img src="assets/img/WhatsApp/whtat_001.jpg" alt="Automação WhatsApp para atendimento empresarial" loading="lazy" decoding="async">
+            <div><span>Automação WhatsApp</span><h3>Atendimento automático com captura de oportunidades</h3><p>Fluxos, respostas automáticas, menu inteligente e encaminhamento para atendente.</p><a class="case-demo-link" href="#produtos-prontos">Ver Demonstração</a></div>
+          </article>
+          <article class="featured-case-card reveal">
+            <img src="assets/img/ist/ist_001.jpg" alt="Automação Instagram para captação de leads" loading="lazy" decoding="async">
+            <div><span>Automação Instagram</span><h3>Prospecção e relacionamento para atrair clientes</h3><p>Captação por nicho, interações estratégicas e início de conversas comerciais.</p><a class="case-demo-link" href="#produtos-prontos">Ver Demonstração</a></div>
           </article>
         </div>
       </div>
@@ -924,6 +977,12 @@
 </section>
 
 <section class="pricing" id="planos">
+      <div class="container authority-banner reveal" aria-label="Autoridade GB Tech Solutions">
+        <span>+ Soluções Digitais</span>
+        <span>+ Desenvolvimento Sob Medida</span>
+        <span>+ Atendimento em Todo Brasil</span>
+        <span>+ Suporte Especializado</span>
+      </div>
       <div class="container">
         <div class="section-title reveal">
           <div class="kicker">Investimento inicial</div>
@@ -933,7 +992,7 @@
 
         <div class="pricing-grid">
           <div class="price-card reveal"><span class="plan-badge subtle">Entrada rápida</span><h3>Landing Page</h3><p>Para divulgar um serviço, produto, campanha ou captação de clientes com foco em conversão.</p><div class="price">R$ 597</div><ul class="features"><li>Página única profissional</li><li>Design responsivo</li><li>Botão para WhatsApp</li><li>Texto comercial básico</li><li>Entrega pronta para divulgação</li></ul><a class="btn btn-white" href="https://wa.me/5521965829441?text=Olá!%20Tenho%20interesse%20em%20uma%20Landing%20Page." target="_blank">Quero um orçamento</a></div>
-          <div class="price-card featured reveal"><span class="plan-badge">Recomendado</span><h3>Site Profissional</h3><p>Para empresas que precisam passar confiança, aparecer no Google e vender melhor online.</p><div class="price">R$ 997</div><ul class="features"><li>Até 5 seções estratégicas</li><li>WhatsApp integrado</li><li>Google Maps</li><li>Formulário de contato</li><li>SEO básico</li><li>Layout comercial premium</li></ul><a class="btn" href="https://wa.me/5521965829441?text=Olá!%20Quero%20um%20Site%20Profissional%20com%20a%20GB%20Tech%20Solutions." target="_blank">Falar com especialista</a></div>
+          <div class="price-card featured reveal"><span class="plan-badge">Mais Procurado</span><h3>Site Profissional</h3><p>Para empresas que precisam passar confiança, aparecer no Google e vender melhor online.</p><div class="price">R$ 997</div><ul class="features"><li>Até 5 seções estratégicas</li><li>WhatsApp integrado</li><li>Google Maps</li><li>Formulário de contato</li><li>SEO básico</li><li>Layout comercial premium</li></ul><a class="btn" href="https://wa.me/5521965829441?text=Olá!%20Quero%20um%20Site%20Profissional%20com%20a%20GB%20Tech%20Solutions." target="_blank">Falar com especialista</a></div>
           <div class="price-card reveal"><span class="plan-badge subtle">Projeto personalizado</span><h3>Sistema Sob Medida</h3><p>Para empresas que precisam automatizar processos ou criar uma plataforma própria.</p><div class="price">A partir de R$ 3.000</div><ul class="features"><li>Painel administrativo</li><li>Login e banco de dados</li><li>Funcionalidades personalizadas</li><li>Integrações</li><li>Suporte técnico</li><li>Automação de rotinas internas</li></ul><a class="btn btn-white" href="https://wa.me/5521965829441?text=Olá!%20Quero%20um%20orçamento%20para%20sistema%20sob%20medida." target="_blank">Solicitar demonstração</a></div>
         </div>
       </div>
@@ -1283,7 +1342,6 @@
       <span>Solicitar orçamento</span>
     </button>
   </div>
-
   <div class="cookie-consent" id="cookieConsent" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
     <div class="cookie-copy">
       <strong>Cookies e privacidade</strong>
