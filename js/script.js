@@ -1139,6 +1139,9 @@ window.addEventListener("appinstalled", () => {
 
 document.querySelectorAll("[data-install-app]").forEach((button) => {
   button.addEventListener("click", async () => {
+    button.classList.remove("is-clicking");
+    void button.offsetWidth;
+    button.classList.add("is-clicking");
     if(getInstallContext().isStandalone){
       openInstallModal();
       return;
@@ -1149,6 +1152,9 @@ document.querySelectorAll("[data-install-app]").forEach((button) => {
 });
 document.querySelectorAll("[data-install-direct]").forEach((button) => {
   button.addEventListener("click", async () => {
+    button.classList.remove("is-clicking");
+    void button.offsetWidth;
+    button.classList.add("is-clicking");
     if(await requestNativeInstall()){
       closeInstallModal();
       return;

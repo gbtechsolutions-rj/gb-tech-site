@@ -785,6 +785,17 @@ section{width:100%;position:relative}
 .install-app-main{
   min-width:180px;
 }
+.install-app-main.is-clicking,
+.install-app-btn.is-clicking,
+.install-confirm.is-clicking{
+  animation:installButtonClick .38s ease;
+}
+@keyframes installButtonClick{
+  0%{transform:scale(1)}
+  42%{transform:scale(.94)}
+  72%{transform:scale(1.05)}
+  100%{transform:scale(1)}
+}
 
 .io-studios{
   padding:clamp(78px,10vw,132px) 0;
@@ -2548,6 +2559,28 @@ html[data-theme="light"] .install-app-card p{
   .partner-logo-item{flex-basis:190px;min-height:86px;padding:14px}
   .partner-logo-item img{max-height:62px}
   .demo-cta,.cookie-consent{align-items:stretch;flex-direction:column}
+  .install-app-card{
+    grid-template-columns:minmax(0,1fr) minmax(112px,34%);
+    align-items:center;
+    gap:14px;
+  }
+  .install-app-card h2{
+    max-width:none;
+    font-size:clamp(1.55rem,7vw,2.35rem);
+    line-height:1;
+  }
+  .install-app-card p{
+    max-width:28rem;
+    font-size:.92rem;
+    line-height:1.45;
+  }
+  .install-app-main{
+    width:100%;
+    min-width:0;
+    min-height:44px;
+    padding-inline:12px;
+    white-space:normal;
+  }
   .wide-promo{padding-bottom:78px}
   .wide-promo-actions{grid-template-columns:1fr}
   .wide-promo-actions .btn{white-space:normal}
@@ -2598,6 +2631,22 @@ html[data-theme="light"] .install-app-card p{
   }
   .io-copy{width:100%;bottom:8vh}
   .io-hero-actions{align-items:flex-start}
+  .install-app-section{
+    padding:34px 0;
+  }
+  .install-app-card{
+    padding:18px;
+    border-radius:16px;
+  }
+  .install-app-card h2{
+    max-width:none;
+    margin:10px 0 8px;
+    font-size:clamp(1.45rem,7.5vw,2rem);
+  }
+  .install-app-card p{
+    font-size:.86rem;
+    line-height:1.45;
+  }
   .gb-scroll-visual{min-height:380px}
   .calendar-row,.mini-dashboard,.site-mini-grid{grid-template-columns:1fr 1fr}
   .whatsapp-quick{right:16px;bottom:104px}
