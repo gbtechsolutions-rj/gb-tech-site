@@ -1158,6 +1158,26 @@ document.querySelectorAll("[data-install-direct]").forEach((button) => {
 });
 document.querySelectorAll("[data-close-install-modal]").forEach((button) => button.addEventListener("click", closeInstallModal));
 
+// Entry ad modal.
+const entryAdModal = document.getElementById("entryAdModal");
+function openEntryAd(){
+  if(!entryAdModal) return;
+  entryAdModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("menu-is-open");
+}
+function closeEntryAd(){
+  if(!entryAdModal) return;
+  entryAdModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("menu-is-open");
+}
+if(entryAdModal){
+  window.addEventListener("load", openEntryAd);
+  document.querySelectorAll("[data-close-entry-ad]").forEach((button) => button.addEventListener("click", closeEntryAd));
+  document.addEventListener("keydown", (event) => {
+    if(event.key === "Escape" && entryAdModal.getAttribute("aria-hidden") === "false") closeEntryAd();
+  });
+}
+
 // PWA registration. Works on HTTPS/Vercel and keeps the installed app updated.
 if("serviceWorker" in navigator){
   window.addEventListener("load", () => {
