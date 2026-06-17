@@ -3738,6 +3738,76 @@ html[data-theme="light"] .install-app-card p{
   .io-header{
     background:linear-gradient(180deg,rgba(2,6,16,.96),rgba(2,6,16,.78));
   }
+  .ioasys-exact-hero{
+    min-height:100svh;
+    overflow:hidden;
+  }
+  .io-hero-layer{
+    align-content:start;
+    gap:18px;
+    padding:clamp(128px,30vw,154px) 22px 92px;
+    overflow:hidden;
+  }
+  .io-hero-title{
+    width:100%;
+    max-width:100%;
+    font-size:clamp(2.55rem,11.2vw,3.55rem);
+    line-height:.94;
+    letter-spacing:0;
+    overflow:hidden;
+  }
+  .io-title-white,
+  .io-title-yellow,
+  .io-title-small{
+    max-width:100%;
+    overflow-wrap:normal;
+    word-break:normal;
+  }
+  .io-title-yellow{
+    margin-top:2px;
+  }
+  .io-title-small{
+    margin-top:8px;
+    font-size:.58em;
+    line-height:1.02;
+  }
+  .io-copy{
+    width:100%;
+    max-width:100%;
+  }
+  .io-hero-desc{
+    max-width:100%;
+    margin-bottom:18px;
+    font-size:.96rem;
+    line-height:1.55;
+  }
+  .io-hero-actions{
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+  .io-hero-btn,
+  .io-hero-link{
+    width:100%;
+    min-height:52px;
+    padding-inline:16px;
+  }
+  .hero-trust-seals{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:10px;
+    width:100%;
+    margin-top:16px;
+  }
+  .hero-trust-seals span{
+    width:max-content;
+    max-width:100%;
+    min-height:42px;
+    padding:9px 12px;
+    font-size:.84rem;
+    line-height:1.2;
+  }
   .whatsapp-quick{
     right:14px;
     bottom:18px;

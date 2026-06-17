@@ -682,6 +682,7 @@ if(menuYear) menuYear.textContent = currentYear;
   const sideOne = document.getElementById("ioSideOne");
   const sideTwo = document.getElementById("ioSideTwo");
   if(!word || reduceMotion) return;
+  const compactHero = window.matchMedia("(max-width: 760px)");
 
   const items = [
     { pt:["e automações","site premium","automação"], en:["and automations","premium website","automation"] },
@@ -695,6 +696,15 @@ if(menuYear) menuYear.textContent = currentYear;
   const getLang = () => window.gbTechGetLanguage?.() === "en" ? "en" : "pt";
 
   function render(){
+    if(compactHero.matches){
+      const mobile = getLang() === "en"
+        ? ["and automation","premium website","automation"]
+        : ["e automações","site premium","automação"];
+      word.textContent = mobile[0];
+      if(sideOne) sideOne.textContent = mobile[1];
+      if(sideTwo) sideTwo.textContent = mobile[2];
+      return;
+    }
     const item = items[index][getLang()];
     word.textContent = item[0];
     if(sideOne) sideOne.textContent = item[1];
@@ -709,6 +719,7 @@ if(menuYear) menuYear.textContent = currentYear;
   function start(){ timer = window.setInterval(tick, 3800); }
   function stop(){ window.clearInterval(timer); }
   document.addEventListener("visibilitychange", () => document.hidden ? stop() : start());
+  compactHero.addEventListener?.("change", render);
   document.addEventListener("gbTechLanguageChange", render);
   render();
   start();
@@ -866,12 +877,15 @@ if(menuYear) menuYear.textContent = currentYear;
 
     const startsAtOne = element.classList.contains("num");
     const duration = startsAtOne ? 520 : 900;
+    const baseValue = startsAtOne ? 1 : Math.max(1, Math.floor(target * .72));
     const start = performance.now();
 
     const tick = (now) => {
       const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      element.textContent = Math.max(startsAtOne ? 1 : 0, Math.round(target * eased));
+      element.textContent = startsAtOne
+        ? Math.max(1, Math.round(target * eased))
+        : Math.round(baseValue + ((target - baseValue) * eased));
       if(progress < 1) {
         requestAnimationFrame(tick);
       } else {
@@ -879,7 +893,7 @@ if(menuYear) menuYear.textContent = currentYear;
       }
     };
 
-    element.textContent = startsAtOne ? "1" : "0";
+    element.textContent = String(baseValue);
     requestAnimationFrame(tick);
   };
 
