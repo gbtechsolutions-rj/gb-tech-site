@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GB Live Wallpaper | Aplicativo GB Tech Solutions</title>
+  <meta name="description" content="GB Live Wallpaper &eacute; um aplicativo da GB Tech Solutions com wallpapers animados, categorias gratuitas, recursos Premium, assinatura via Google Play e an&uacute;ncios AdMob." />
+  <meta name="theme-color" content="#050914" />
+  <script>
+    document.documentElement.dataset.theme = localStorage.getItem("gbTechTheme") === "light" ? "light" : "dark";
+  </script>
+  <link rel="manifest" href="../../manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="../../assets/img/pwa-icon-192.png" />
+  <link rel="preload" href="../../assets/img/logo-white.png" as="image">
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body class="io-style-home app-page">
+  <header class="io-header">
+    <div class="container nav io-nav">
+      <a href="../../index.html#inicio" class="brand io-brand" aria-label="GB Tech Solutions">
+        <img src="../../assets/img/logo-white.png" alt="GB Tech Solutions" class="brand-img io-brand-img" fetchpriority="high" decoding="async" />
+      </a>
+      <div class="nav-actions io-nav-actions">
+        <div class="theme-switcher io-theme" aria-label="Selecionar tema">
+          <button class="active" type="button" data-theme-switch="dark" aria-label="Usar modo escuro">Escuro</button>
+          <button type="button" data-theme-switch="light" aria-label="Usar modo claro">Claro</button>
+        </div>
+        <button class="menu-trigger io-menu-trigger" id="mobile" aria-label="Abrir menu" aria-expanded="false"><span>Menu</span><i aria-hidden="true"></i></button>
+      </div>
+      <nav class="menu menu-overlay io-menu-overlay" id="menu" aria-label="Menu principal">
+        <div class="menu-overlay-bg" aria-hidden="true"></div>
+        <div class="menu-panel io-menu-panel" role="dialog" aria-modal="true" aria-label="Menu GB Tech Solutions">
+          <div class="menu-panel-head io-menu-head">
+            <img src="../../assets/img/logo-white.png" alt="GB Tech Solutions" loading="lazy" decoding="async" />
+            <div class="io-menu-top-actions">
+              <div class="theme-switcher io-menu-theme" aria-label="Selecionar tema">
+                <button class="active" type="button" data-theme-switch="dark" aria-label="Usar modo escuro">Escuro</button>
+                <button type="button" data-theme-switch="light" aria-label="Usar modo claro">Claro</button>
+              </div>
+              <button class="menu-close" type="button" aria-label="Fechar menu">&times;</button>
+            </div>
+          </div>
+          <div class="io-menu-content">
+            <div class="io-menu-main">
+              <div class="io-menu-columns" aria-label="Links principais">
+                <div class="io-menu-column">
+                  <a href="../../index.html#inicio" class="menu-link">In&iacute;cio</a>
+                  <a href="../../index.html#servicos" class="menu-link">Nossas solu&ccedil;&otilde;es</a>
+                  <a href="../" class="menu-link">Aplicativos</a>
+                  <a href="../../index.html#produtos-prontos" class="menu-link">Produtos prontos</a>
+                  <a href="../../index.html#contato" class="menu-link">Fale conosco</a>
+                </div>
+                <div class="io-menu-column">
+                  <a href="./" class="menu-link">GB Live Wallpaper</a>
+                  <a href="../../privacy/gb-live-wallpaper/" class="menu-link">Privacidade do app</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="io-menu-footer">
+            <span>&copy; <span id="menuYear"></span> &middot; GB Tech Solutions</span>
+            <a href="https://wa.me/5521965829441?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20GB%20Tech%20Solutions." target="_blank" rel="noopener">Solicitar or&ccedil;amento</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="app-hero-section">
+      <div class="container app-detail-layout">
+        <div class="app-hero-copy reveal">
+          <span class="kicker">Aplicativo mobile</span>
+          <h1>GB Live Wallpaper</h1>
+          <p>Aplicativo de pap&eacute;is de parede animados criado pela GB Tech Solutions, com experi&ecirc;ncia gratuita, categorias organizadas e recursos Premium liberados por assinatura via Google Play.</p>
+          <div class="app-feature-actions">
+            <span class="btn btn-disabled" aria-disabled="true">Baixar na Google Play</span>
+            <a class="btn btn-glass" href="../../privacy/gb-live-wallpaper/">Pol&iacute;tica de privacidade</a>
+          </div>
+        </div>
+        <div class="app-phone-preview reveal" aria-label="Pr&eacute;via visual do app GB Live Wallpaper">
+          <div class="app-phone-screen">
+            <span>GB Live</span>
+            <strong>Wallpapers animados</strong>
+            <small>Free + Premium</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="app-info-section">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="kicker">Recursos do app</div>
+          <h2>Experi&ecirc;ncia visual com op&ccedil;&otilde;es gratuitas e Premium</h2>
+        </div>
+        <div class="app-info-grid">
+          <article class="app-info-card reveal"><span>01</span><h3>Wallpapers animados</h3><p>Pap&eacute;is de parede com movimento para personalizar a tela do dispositivo.</p></article>
+          <article class="app-info-card reveal"><span>02</span><h3>Categorias gratuitas</h3><p>Conte&uacute;dos gratuitos organizados por categorias para facilitar a escolha.</p></article>
+          <article class="app-info-card reveal"><span>03</span><h3>Recursos Premium</h3><p>Fun&ccedil;&otilde;es e conte&uacute;dos especiais para usu&aacute;rios Premium.</p></article>
+          <article class="app-info-card reveal"><span>04</span><h3>Assinatura Premium via Google Play</h3><p>A assinatura Premium &eacute; realizada e gerenciada pela Google Play.</p></article>
+          <article class="app-info-card reveal"><span>05</span><h3>An&uacute;ncios com AdMob</h3><p>O app pode exibir an&uacute;ncios por meio do Google AdMob na experi&ecirc;ncia gratuita.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-copy">
+        <strong>GB Live Wallpaper</strong>
+        <p>Um produto digital da GB Tech Solutions para a Google Play.</p>
+        <small>&copy; <span id="year"></span> GB Tech Solutions. Todos os direitos reservados.</small>
+      </div>
+      <div class="footer-services" aria-label="Links do aplicativo">
+        <span><a href="../">Todos os apps</a></span>
+        <span><a href="../../privacy/gb-live-wallpaper/">Pol&iacute;tica de privacidade</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/script.js" defer></script>
+</body>
+</html>

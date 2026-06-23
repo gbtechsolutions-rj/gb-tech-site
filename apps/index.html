@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aplicativos GB Tech Solutions | Apps publicados</title>
+  <meta name="description" content="Conhe&ccedil;a os aplicativos desenvolvidos e publicados pela GB Tech Solutions, incluindo o GB Live Wallpaper para pap&eacute;is de parede animados." />
+  <meta name="theme-color" content="#050914" />
+  <script>
+    document.documentElement.dataset.theme = localStorage.getItem("gbTechTheme") === "light" ? "light" : "dark";
+  </script>
+  <link rel="manifest" href="../manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="../assets/img/pwa-icon-192.png" />
+  <link rel="preload" href="../assets/img/logo-white.png" as="image">
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="io-style-home app-page">
+  <header class="io-header">
+    <div class="container nav io-nav">
+      <a href="../index.html#inicio" class="brand io-brand" aria-label="GB Tech Solutions">
+        <img src="../assets/img/logo-white.png" alt="GB Tech Solutions" class="brand-img io-brand-img" fetchpriority="high" decoding="async" />
+      </a>
+      <div class="nav-actions io-nav-actions">
+        <div class="theme-switcher io-theme" aria-label="Selecionar tema">
+          <button class="active" type="button" data-theme-switch="dark" aria-label="Usar modo escuro">Escuro</button>
+          <button type="button" data-theme-switch="light" aria-label="Usar modo claro">Claro</button>
+        </div>
+        <button class="menu-trigger io-menu-trigger" id="mobile" aria-label="Abrir menu" aria-expanded="false"><span>Menu</span><i aria-hidden="true"></i></button>
+      </div>
+      <nav class="menu menu-overlay io-menu-overlay" id="menu" aria-label="Menu principal">
+        <div class="menu-overlay-bg" aria-hidden="true"></div>
+        <div class="menu-panel io-menu-panel" role="dialog" aria-modal="true" aria-label="Menu GB Tech Solutions">
+          <div class="menu-panel-head io-menu-head">
+            <img src="../assets/img/logo-white.png" alt="GB Tech Solutions" loading="lazy" decoding="async" />
+            <div class="io-menu-top-actions">
+              <div class="theme-switcher io-menu-theme" aria-label="Selecionar tema">
+                <button class="active" type="button" data-theme-switch="dark" aria-label="Usar modo escuro">Escuro</button>
+                <button type="button" data-theme-switch="light" aria-label="Usar modo claro">Claro</button>
+              </div>
+              <button class="menu-close" type="button" aria-label="Fechar menu">&times;</button>
+            </div>
+          </div>
+          <div class="io-menu-content">
+            <div class="io-menu-main">
+              <div class="io-menu-columns" aria-label="Links principais">
+                <div class="io-menu-column">
+                  <a href="../index.html#inicio" class="menu-link">In&iacute;cio</a>
+                  <a href="../index.html#servicos" class="menu-link">Nossas solu&ccedil;&otilde;es</a>
+                  <a href="./" class="menu-link">Aplicativos</a>
+                  <a href="../index.html#produtos-prontos" class="menu-link">Produtos prontos</a>
+                  <a href="../index.html#planos" class="menu-link">Planos</a>
+                </div>
+                <div class="io-menu-column">
+                  <a href="../index.html#portfolio" class="menu-link">Projetos</a>
+                  <a href="../index.html#faq" class="menu-link">FAQ</a>
+                  <a href="../index.html#contato" class="menu-link">Fale conosco</a>
+                  <a href="gb-live-wallpaper/" class="menu-link">GB Live Wallpaper</a>
+                  <a href="../privacy/gb-live-wallpaper/" class="menu-link">Privacidade</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="io-menu-footer">
+            <span>&copy; <span id="menuYear"></span> &middot; GB Tech Solutions</span>
+            <a href="https://wa.me/5521965829441?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20GB%20Tech%20Solutions." target="_blank" rel="noopener">Solicitar or&ccedil;amento</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="app-hero-section">
+      <div class="container app-hero-grid">
+        <div class="app-hero-copy reveal">
+          <span class="kicker">Google Play</span>
+          <h1>Aplicativos GB Tech Solutions</h1>
+          <p>Uma vitrine profissional para os aplicativos desenvolvidos e publicados pela GB Tech Solutions.</p>
+        </div>
+        <article class="app-store-card reveal">
+          <div class="app-icon-mark" aria-hidden="true">GB</div>
+          <span class="subscription-tag">Em breve na Google Play</span>
+          <h2>GB Live Wallpaper</h2>
+          <p>Pap&eacute;is de parede animados com categorias gratuitas e recursos Premium.</p>
+          <div class="app-feature-actions">
+            <a class="btn" href="gb-live-wallpaper/">Ver detalhes</a>
+            <span class="btn btn-disabled" aria-disabled="true">Baixar na Google Play</span>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-copy">
+        <strong>GB Tech Solutions</strong>
+        <p>Sites, sistemas, automa&ccedil;&otilde;es, card&aacute;pio digital, apps mobile e solu&ccedil;&otilde;es digitais.</p>
+        <small>&copy; <span id="year"></span> GB Tech Solutions. Todos os direitos reservados.</small>
+      </div>
+      <div class="footer-services" aria-label="Links de aplicativos">
+        <span><a href="gb-live-wallpaper/">GB Live Wallpaper</a></span>
+        <span><a href="../privacy/gb-live-wallpaper/">Pol&iacute;tica de privacidade</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js" defer></script>
+</body>
+</html>

@@ -1,7 +1,13 @@
-const CACHE_NAME = "gb-tech-solutions-v1";
+const CACHE_NAME = "gb-tech-solutions-v2";
 const APP_SHELL = [
   "/",
   "/index.html",
+  "/apps/",
+  "/apps/index.html",
+  "/apps/gb-live-wallpaper/",
+  "/apps/gb-live-wallpaper/index.html",
+  "/privacy/gb-live-wallpaper/",
+  "/privacy/gb-live-wallpaper/index.html",
   "/css/style.css",
   "/js/script.js",
   "/manifest.webmanifest",
