@@ -1900,6 +1900,19 @@ section{width:100%;position:relative}
   border-radius:18px;
   font-size:clamp(3rem,8vw,6rem);
 }
+.app-feature-media img,
+.app-icon-img{
+  width:min(150px,58%);
+  aspect-ratio:1;
+  object-fit:cover;
+  border-radius:24px;
+  box-shadow:0 18px 44px rgba(0,0,0,.24);
+}
+.app-icon-img{
+  width:86px;
+  height:86px;
+  border:1px solid rgba(99,227,255,.26);
+}
 .app-icon-mark{
   width:86px;
   height:86px;
@@ -2002,16 +2015,17 @@ section{width:100%;position:relative}
 .app-phone-screen{
   width:100%;
   height:100%;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  gap:12px;
-  padding:24px;
+  position:relative;
+  overflow:hidden;
   border-radius:24px;
-  background:
-    radial-gradient(circle at 50% 20%,rgba(99,227,255,.5),transparent 22%),
-    radial-gradient(circle at 74% 56%,rgba(34,197,94,.28),transparent 28%),
-    linear-gradient(160deg,#10264c,#071427 58%,#020610);
+  background:#071427;
+}
+.app-phone-screenshot{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  border-radius:24px;
 }
 .app-phone-screen span{
   color:#63e3ff;

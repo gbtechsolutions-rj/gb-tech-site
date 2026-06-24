@@ -1,4 +1,4 @@
-const CACHE_NAME = "gb-tech-solutions-v2";
+const CACHE_NAME = "gb-tech-solutions-v4";
 const APP_SHELL = [
   "/",
   "/index.html",
@@ -13,6 +13,8 @@ const APP_SHELL = [
   "/manifest.webmanifest",
   "/assets/img/logo-white.png",
   "/assets/img/logo-color.png",
+  "/assets/img/GB-Live-Wallpaper.png",
+  "/assets/img/visualizar.jpeg",
   "/assets/img/pwa-icon-192.png",
   "/assets/img/pwa-icon-512.png"
 ];
